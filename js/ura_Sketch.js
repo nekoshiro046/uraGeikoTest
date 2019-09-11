@@ -18,7 +18,7 @@ function setup() {
     // setup drawing
     smooth();
     strokeWeight(1);
-    background(3,4,18);
+    // background(3,4,18);
     stroke(255);
     rectMode(CENTER);
 
@@ -43,7 +43,7 @@ function draw() {
     if(clickNum != 0){
         var rn = int(random(100));
         // if(rn == 0){
-        if(clickCount >= 60){
+        if(clickCount >= 45){
             var rx = random(width/4,width/4*3);
             var ry = random(height/4,height/4*3);
             for (var i = 0; i < 4; i++) {
@@ -58,12 +58,17 @@ function draw() {
         $(function() {
  
           // 一旦hide()で隠してフェードインさせる
-          $('.title').fadeIn(1500);
+          $(".title").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});
          
         });
+
     }
 
     clickCount++;
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 // particle class
