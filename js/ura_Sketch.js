@@ -28,22 +28,6 @@ function setup() {
 
 function draw() {
     // background(0);
-    if(clickNum != 0){
-    	var rn = int(random(100));
-	    // if(rn == 0){
-	   	if(clickCount >= 100){
-	    	var rx = random(width/4,width/4*3);
-	    	var ry = random(height/4,height/4*3);
-	    	for (var i = 0; i < 4; i++) {
-		        // append(p, new Particle(createVector(width/2, height/2), i * 2*PI / 4));
-		        append(p, new Particle(createVector(rx,ry), i * 2*PI / 4));
-		    }
-		    clickNum--;
-		    clickCount = 0;
-	    }
-    }else{
-    	noLoop();
-    }
 
     stroke(255);
     strokeWeight(2);
@@ -55,6 +39,29 @@ function draw() {
 
     fill(0);
     stroke(255);
+
+    if(clickNum != 0){
+        var rn = int(random(100));
+        // if(rn == 0){
+        if(clickCount >= 60){
+            var rx = random(width/4,width/4*3);
+            var ry = random(height/4,height/4*3);
+            for (var i = 0; i < 4; i++) {
+                // append(p, new Particle(createVector(width/2, height/2), i * 2*PI / 4));
+                append(p, new Particle(createVector(rx,ry), i * 2*PI / 4));
+            }
+            clickNum--;
+            clickCount = 0;
+        }
+    }else{
+        // noLoop();
+        $(function() {
+ 
+          // 一旦hide()で隠してフェードインさせる
+          $('.title').fadeIn(1500);
+         
+        });
+    }
 
     clickCount++;
 }
