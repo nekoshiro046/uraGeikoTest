@@ -1,0 +1,13 @@
+main {
+	font-family: 'arial black','arial','sans-serif','Impact';
+	/*text-orientation: upright;  すべて縦方向に表示 
+	writing-mode: vertical-rl;*/
+	background-color: #030412;
+
+}
+
+main h1{
+	margin-top: 10vh;
+	text-align: center;
+	color: #ffffff;
+}
