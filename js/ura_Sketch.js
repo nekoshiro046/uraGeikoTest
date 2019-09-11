@@ -11,6 +11,7 @@ function windowResized(){
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0,0);
+    canvas.parent('sketch-holder');
     canvas.style('z-index','-1');
     //canvas.position(0, 0);
     //canvas.class("pcanvas");

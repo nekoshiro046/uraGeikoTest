@@ -43,16 +43,22 @@ h3{
 	height: 100%;
 }
 .p-box{
+	width: 50%;
 	padding-top: 25px;
+	padding-bottom: 100px;
+	
 	margin-bottom: 50vh;
+	margin-right: auto;
+	margin-left: auto;
 	color: #ffffff;
-	/*border-right: solid 3px #ffffff;
-	border-left :solid 3px #ffffff;*/
+	border-right: solid 3px #ffffff;
+	border-left :solid 3px #ffffff;
 }
 
 
 @media screen and (max-width:480px){
   .p-box{
+  	width: 50%;
     padding-top: 10px;
     margin-bottom: 50px;
     color: #ffffff;
@@ -64,12 +70,12 @@ h3{
 }
 
 .p-box h3 {
-  	width: 50%;
-  	margin-left: 25%;
+  	/*width: 50%;*/
+  	margin: 0 auto;
 }
 .p-box p {
-	width: 50%;
-	margin-left: 25%;
+	width: 80%;
+	margin: 0 auto;
 }
 
 
