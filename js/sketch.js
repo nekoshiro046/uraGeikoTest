@@ -1,144 +1,74 @@
-var scene = 0;
-var sceneContinue = true;
 
-var scene1cores = [];
-var shapeType = 4;
-var sAngle;
-var sSize = 100;
-var step = -2;
+var img;
+var img1;
+var img2;
+var slider;
+var cols = 40;
+var rows = 40;
+var boxes;
+var boxHolder;
 
+// preload the images to be used for the checkboxes
 function preload(){
+  img1 = loadImage('assets/image/ura_m.png');
+  img2 = loadImage('assets/image/ura_b.png');
 }
-
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
+  // the html dom elements are not rendered on canvas
+  noCanvas();
+  // set pixel density to 1
+  pixelDensity(1);
+  boxHolder = createDiv('');
+  boxHolder.id('mirror');
 
-  // canvas = createCanvas(windowWidth, windowHeight,WEBGL);
+  boxes = [];
 
-  canvas.position(0,0);
-  canvas.style('position','fixed');
-  canvas.style('z-index','1');
+  // set the current img
+  img = img1;
+  img.resize(cols, rows);
+  img.loadPixels();
 
-  canvas.parent('sketch-holder');
-
-  background(0);
-  noStroke();
-  frameRate(30);
-  // blendMode(ADD);
-  formShape();
-}
-
-function formShape(){
-  sAngle = radians(360 / float(shapeType));
-  for (var i = 0; i< shapeType; i++) {
-    scene1cores[i] = createVector(sSize*cos(sAngle * i),sSize*sin(sAngle * i)); 
+  for (var y = 0; y < rows; y++) {
+    for (var x = 0; x < cols; x++) {
+      var box = createCheckbox();
+      box.style('display', 'inline');
+      box.parent('mirror');
+      boxes.push(box);
+    }
+    var linebreak = createSpan('<br/>');
+    linebreak.parent('mirror');
   }
+
+  // add a slider to adjust the pixel threshold
+  slider = createSlider(0, 255, 0);
 }
 
 function draw() {
-	if(scene == 0){
-    drawScene0();
-    updateScene0();
-	}else if(scene == 1){
-		drawScene1();
-	}else if(scene == 2){
-		drawScene2();
-	}
-}
+  for (var y = 0; y < img.height; y++) {
+    for (var x = 0; x < img.height; x++) {
+      var c = color(img.get(x, y));
+      var bright = (red(c) + green(c) + blue(c)) / 3;
 
-// function mousePressed(){
-//   if(scene == 0){
-//     sceneContinue = false;
-//   }else if(scene == 1){
-//     scene = 2;
-//   }else{
-//     scene = 3;
-//   }
-// }
+      // get the threshold from the slider
+      var threshold = slider.value();
 
-function updateScene0(){
-  push();
-  translate(width/2,height/2);
-  if(mouseIsPressed)sSize -= step * 10;
-  sSize +=  step;
-  for (var i = 0; i< shapeType; i++) {
-    scene1cores[i].x = sSize*cos(sAngle * i);
-    scene1cores[i].y = sSize*sin(sAngle * i);
-    if(sceneContinue && i < shapeType/2 && dist(scene1cores[i].x,scene1cores[i].y,scene1cores[i*2].y,scene1cores[i*2].y) <= 5){
-      shapeType = int(random(3,25));
-      formShape();
-      break;
-    }
-    if(!sceneContinue && i < shapeType/2 && dist(scene1cores[i].x,scene1cores[i].y,scene1cores[i*2].y,scene1cores[i*2].y) <= 5){
-      scene = 1;
-      sceneContinue = true;
-      break;
-    }
+      var checkIndex = x + y * cols;
 
-    if(scene1cores[i].x > width/2 || scene1cores[i].x < -width/2 || scene1cores[i].y > height/2 || scene1cores[i].y < -height/2){
-      step *= -1;
-      break;
+      if (bright > threshold) {
+        boxes[checkIndex].checked(false);
+      } else {
+        boxes[checkIndex].checked(true);
+      }
     }
   }
-
-  // for (var i=0; i<shapeType; i++){
-  //   scene1cores[i].x += random(-step,step);
-  //   scene1cores[i].y += random(-step,step);
-  //   if(sceneContinue && i < shapeType/2 && dist(scene1cores[i].x,scene1cores[i].y,scene1cores[i*2].y,scene1cores[i*2].y) <= 5){
-  //     shapeType = int(random(3,25));
-  //     formShape();
-  //     break;
-  //   }
-  //   if(!sceneContinue && i < shapeType/2 && dist(scene1cores[i].x,scene1cores[i].y,scene1cores[i*2].y,scene1cores[i*2].y) <= 5){
-  //     scene = 1;
-  //     sceneContinue = true;
-  //     break;
-  //   }
-
-  //   if(scene1cores[i].x > width/2 || scene1cores[i].x < -width/2 || scene1cores[i].y > height/2 || scene1cores[i].y < -height/2){
-  //     step *= -1;
-  //     break;
-  //   }
-  // }
-  pop();
 }
 
+function keyPressed() {
+  if (key == '1') img = img1;
+  if (key == '2') img = img2;
+  if (key == '3') img = img3;
 
-function drawScene0(){
-  background(0);
-	push();
-	translate(width/2,height/2);
-  // rotate((random(-5,5) * frameCount));
-	stroke(255);
-  noFill();
-
-  beginShape();
-  for (var i=0; i<shapeType; i++){
-    if(i == 0){
-      stroke(255,0,0);
-    }else{
-      stroke(255);
-    }
-    vertex(scene1cores[i].x, scene1cores[i].y);
-    strokeWeight(10);
-    point(scene1cores[i].x, scene1cores[i].y);
-
-  }
-  strokeWeight(1);
-  endShape(CLOSE);
-
-  pop();
-}
-function updateScene1(){
-
-}
-function drawScene1() {
-  background(100);
-
-
-}
-
-function drawScene2(){
-
+  img.resize(cols, rows);
+  img.loadPixels();
 }

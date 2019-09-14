@@ -2,12 +2,24 @@ var p = new Array();
 var side = 100;
 let song;
 var canvas;
-let clickNum = 10;
-let clickCount = 0;
+let clickNum = 15;//発生数
+let clickCount = 0;//発生確認用カウンター
+var apperSpan = 45;//発生スパン闘値
+var uraTriger = false;
+var img;
+var fadeCount = 0;
+var apperUra = false;
+var apperCircuit = true;
 
 function windowResized(){
 	resizeCanvas(windowWidth, windowHeight);
 }
+
+function preload(){
+  img = loadImage('assets/image/ura.png');
+}
+
+
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0,0);
@@ -28,15 +40,19 @@ function setup() {
 
 
 function draw() {
-    // background(0);
-
     stroke(255);
     strokeWeight(2);
 
-    for (var i = 0; i < p.length; i++) {
-        p[i].step();
-        if (p[i].blocked) p.splice(i, 1);
+    if(apperCircuit){
+        for (var i = 0; i < p.length; i++) {
+            p[i].step();
+            if (p[i].blocked) p.splice(i, 1);
+        }
     }
+    // for (var i = 0; i < p.length; i++) {
+    //     p[i].step();
+    //     if (p[i].blocked) p.splice(i, 1);
+    // }
 
     fill(0);
     stroke(255);
@@ -44,7 +60,7 @@ function draw() {
     if(clickNum != 0){
         var rn = int(random(100));
         // if(rn == 0){
-        if(clickCount >= 45){
+        if(clickCount >= apperSpan){
             var rx = random(width/4,width/4*3);
             var ry = random(height/4,height/4*3);
             for (var i = 0; i < 4; i++) {
@@ -52,24 +68,48 @@ function draw() {
                 append(p, new Particle(createVector(rx,ry), i * 2*PI / 4));
             }
             clickNum--;
+            if(clickNum == 0){
+                apperCircuit = false;
+                apperUra = true;
+            }
+            
+            if(apperSpan > 0){
+            	apperSpan -= int(random(5));
+            }else{
+            	apperSpan = 0;
+            }
             clickCount = 0;
         }
-    }else{
+    }else if(clickNum == 0 && apperUra){
+        // makeU();
+        tint(255, fadeCount);
+        image(img,0,0,width,height);
+        fadeCount += 16;
+        if(fadeCount > 255)apperUra = false;
+
         // noLoop();
+
+    }else{
         $(function() {
  
           // 一旦hide()で隠してフェードインさせる
           $(".title").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});
          
         });
-
+        noLoop();
     }
 
     clickCount++;
 }
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+function makeU(){
+    var rx = random(width/4,width/4*3);
+    var ry = random(height/4,height/4*3);
+    
+
+    stroke(255,0,0);
+    line(rx, ry, this.location.x, this.location.y);
+
 }
 
 // particle class
