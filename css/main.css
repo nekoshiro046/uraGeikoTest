@@ -27,13 +27,27 @@ h3{
   margin: 15vh 10vh 5vh 10vh;
 }
 
-.title{
-	margin-top: 10vh;
-	text-align: center;
-	color: #ffffff;
-	/*display: none;*/
-	opacity: 0;
+.title {
+  color:black;
+  width: 60vw;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 2vw;
+  padding: 0vh 10vw 0vh 10vw;
+  border-bottom: groove #000000;
+  opacity: 0;
 }
+
+@media screen and (max-width: 480px) { 
+  .title {
+  color:black;
+  font-size: 20px;
+  padding: 0vh 10vw 0vh 10vw;
+  border-bottom: groove #000000;
+  }
+}
+
+
 .blank {
 	margin-top: 110vh;
   	background-color: #ffffff;
