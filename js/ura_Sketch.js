@@ -78,10 +78,6 @@ function initMarkers(){
     markers[8] = new marker(cx + margin_01*3 - margin_01,cy,[0,1,0,0,0,0,0,0]);
     markers[9] = new marker(cx + margin_02,c32y,[0,0,1,0,0,0,0,0]);
     // markers[10] = new marker(cx + margin_02*5 - margin_01 + c3y/2,c32y,[0,0,1,0,0,0,0,0]);
-      // push();
-      // strokeWeight(10);
-      // point(cx + margin_02,margin_032);
-      // pop();
     markers[10] = new marker(cx,c32y,[1,0,0,0,0,0,1,0]);
     markers[11] = new marker(cx-margin_02*3,c32y,[0,0,0,0,0,0,0,1]);
     markers[12] = new marker(cx-margin_02*3 - margin_01,c32y+ margin_01,[1,0,0,0,0,0,0,0]);
@@ -89,6 +85,11 @@ function initMarkers(){
     markers[14] = new marker(cx,c32y + margin_01*2 + margin_03,[1,0,0,0,0,0,0,1]);
     markers[15] = new marker(cx-margin_02*3 - margin_01,c32y + margin_01*2,[1,0,0,0,0,0,1,0]);
     markers[16] = new marker(cx-margin_02,c32y + margin_01*2 + margin_03 + margin_02,[1,0,0,0,0,0,0,0]);
+
+    // push();
+    // strokeWeight(10);
+    // point(cx + margin_02,margin_032);
+    // pop();
 }
 
 function serchDirection(mar){
@@ -111,8 +112,10 @@ function draw() {
     }
 
     if(apperUra){
+        var explorerNum = 0;
         for (var i = 0; i < explorer.length; i++) {
             explorer[i].update();
+            explorerNum++;
             if (explorer[i].blocked) explorer.splice(i, 1);
         }
 
@@ -136,7 +139,13 @@ function draw() {
                 }
             }
         }
+
+        if(explorerNum == 0){
+            noLoop();
+            print("loopstop");
+        }
     }
+
     // for (var i = 0; i < p.length; i++) {
     //     p[i].step();
     //     if (p[i].blocked) p.splice(i, 1);
@@ -279,6 +288,7 @@ class Explorer{
     this.speed = 5;
     this.land = 5;
     this.angle = firstDirection * PI / 4;
+    this.life = random(50, 100);
 
     // status
     this.blocked = false;
@@ -323,6 +333,13 @@ class Explorer{
     // }
 
     pop();
+
+    if (this.life > 0) {
+        this.life--;
+    } else {
+        this.blocked = true;
+        return;
+    }
 
   }
 }

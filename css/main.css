@@ -33,6 +33,7 @@ h3{
   text-align: center;
   font-size: 30px;
   margin: 15vh 10vh 5vh 10vh;
+  border-bottom: groove #ff0000;
 }
 
 .title {
@@ -51,7 +52,9 @@ h3{
   .title {
     color:black;
     width: 80vw;
-    font-size: 20px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 8vw;
     padding: 0vh 10vw 0vh 10vw;
     text-align:center
     border-bottom: groove #000000;
@@ -86,15 +89,16 @@ h3{
 @media screen and (max-width:480px){
   .p-box{
   	width: 80%;
-    height: 50vh;
-    padding-top: 10px;
-    margin-bottom: 50px;
+    height: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align:center;
+    margin-bottom: 5vh;
     margin-right: auto;
     margin-left: auto;
     color: #ffffff;
     border-right: solid 3px #ffffff;
     border-left :solid 3px #ffffff;
-    text-align:center;
   }
 }
 
@@ -103,13 +107,19 @@ h3{
 }
 
 .p-box h3 {
-  	/*width: 50%;*/
+  	width: 80%;
   	margin: 0 auto;
 }
 .p-box p {
 	width: 80%;
 	margin: 0 auto;
   text-align:left;
+}
+.p-box a {
+  margin: 0 auto;
+  text-align:center;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .sketch-holder{
@@ -118,8 +128,10 @@ h3{
 }
 
 .footer{
-  width: 100vw;
+  width: 80vw;
   height: 10vh;
+  margin: 0 auto;
+  border-top: groove 3px #ffffff;
 }
 
 .mov-container{
@@ -129,8 +141,16 @@ h3{
 }
 
 .backImg{
-  width: 60vw;
+  width: 50vw;
   height: auto;
   margin: 0 auto;
+  margin-top: 5vh;
   text-align:center;
+}
+
+.backImgText{
+  margin: 0 auto;
+  text-align:center;
+  color: #ffffff;
+  text-decoration: none;
 }
