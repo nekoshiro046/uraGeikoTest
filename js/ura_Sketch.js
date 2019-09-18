@@ -66,16 +66,16 @@ function initMarkers(){
     var margin_01 = 60;var margin_02 = margin_01/2;var margin_03 = margin_01/3;
     
     //８方位(direction) 0:下 2:右 4:上 6:左
-    markers[0] = new marker(cx,cy,[1,0,1,0,1,0,0,1]);
+    markers[0] = new marker(cx,cy,[1,0,1,0,1,0,0,0]);
     markers[1] = new marker(cx,c3y,[0,0,1,0,1,0,1,0]);
     markers[2] = new marker(cx-margin_01,c3y,[0,0,0,0,0,1,0,0]);
     markers[3] = new marker(cx-margin_01*2,c3y - margin_01,[0,0,0,0,1,0,0,0]);
 
     markers[4] = new marker(cx + margin_02,cy,[1,0,1,0,1,0,0,0]);
     markers[5] = new marker(cx + margin_02,c3y,[0,0,1,0,1,0,0,0]);
-    markers[6] = new marker(cx + margin_02*5,c3y,[1,0,0,0,0,0,0,0]);
-    markers[7] = new marker(cx + margin_02*5,c3y + margin_01,[0,0,0,0,0,0,0,1]);
-    markers[8] = new marker(cx + margin_02*5 - margin_01,cy,[0,1,0,0,0,0,0,0]);
+    markers[6] = new marker(cx + margin_01*3,c3y,[1,0,0,0,0,0,0,0]);
+    markers[7] = new marker(cx + margin_01*3,c3y + margin_01,[0,0,0,0,0,0,0,1]);
+    markers[8] = new marker(cx + margin_01*3 - margin_01,cy,[0,1,0,0,0,0,0,0]);
     markers[9] = new marker(cx + margin_02,c32y,[0,0,1,0,0,0,0,0]);
     // markers[10] = new marker(cx + margin_02*5 - margin_01 + c3y/2,c32y,[0,0,1,0,0,0,0,0]);
       // push();
@@ -83,11 +83,12 @@ function initMarkers(){
       // point(cx + margin_02,margin_032);
       // pop();
     markers[10] = new marker(cx,c32y,[1,0,0,0,0,0,1,0]);
-    markers[11] = new marker(cx-margin_01,c32y,[0,0,0,0,0,0,0,1]);
-    // markers[12] = new marker(width/2,height/2 + height/5,[1,0,0,0,0,0,1,0]);
-    // markers[13] = new marker(width/2,height/2 + height/5 + 10,[0,0,0,0,0,0,0,1]);
-    // markers[14] = new marker(width/2-width/10 - height/10,height/2 + height/5,[1,0,0,0,0,0,1,0]);
-    // markers[15] = new marker(width/2 -15,height/2 + height/5 + 10 +15,[1,0,0,0,0,0,0,0]);
+    markers[11] = new marker(cx-margin_02*3,c32y,[0,0,0,0,0,0,0,1]);
+    markers[12] = new marker(cx-margin_02*3 - margin_01,c32y+ margin_01,[1,0,0,0,0,0,0,0]);
+    markers[13] = new marker(cx,c32y + margin_01*2 ,[1,0,0,0,0,0,1,0]);
+    markers[14] = new marker(cx,c32y + margin_01*2 + margin_03,[1,0,0,0,0,0,0,1]);
+    markers[15] = new marker(cx-margin_02*3 - margin_01,c32y + margin_01*2,[1,0,0,0,0,0,1,0]);
+    markers[16] = new marker(cx-margin_02,c32y + margin_01*2 + margin_03 + margin_02,[1,0,0,0,0,0,0,0]);
 }
 
 function serchDirection(mar){
