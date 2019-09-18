@@ -46,7 +46,7 @@ function initMarkers(){
   markers[0] = new marker(width/2,height/2,[1,0,1,0,1,0,1,0]);
   markers[1] = new marker(width/2,height/3,[0,0,1,0,1,1,0,0]);
   markers[2] = new marker(width/2-(height/3-height/5 ),height/5,[0,0,0,0,1,0,0,0]);
-  markers[3] = new marker(width/2,height/3-20,[0,0,0,0,1,1,0,0]);
+  markers[3] = new marker(width/2,height/3-20,[0,0,0,0,1,0,0,0]);
   markers[4] = new marker(width/2-(height/3-height/5),height/5,[0,0,0,0,1,0,0,0]);
 
   markers[5] = new marker(width/2+30,height/2,[1,1,1,0,1,0,1,0]);
