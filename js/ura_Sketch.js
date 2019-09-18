@@ -16,9 +16,9 @@ var explorer = new Array();
 
 
 
-function windowResized(){
-	resizeCanvas(windowWidth, windowHeight);
-}
+// function windowResized(){
+// 	resizeCanvas(windowWidth, windowHeight);
+// }
 
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
