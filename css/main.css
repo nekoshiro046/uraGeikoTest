@@ -14,7 +14,6 @@ main {
 }
 
 header{
-	font-family: 'arial black','arial','sans-serif','Impact';
 }
 
 main{
@@ -29,21 +28,25 @@ h3{
 
 .title {
   color:black;
-  width: 60vw;
+  width: 80vw;
   height: auto;
   margin: 0 auto;
-  margin-top: 2vw;
+  margin-top: 8vw;
   padding: 0vh 10vw 0vh 10vw;
+  text-align:center
   border-bottom: groove #000000;
   opacity: 0;
 }
 
 @media screen and (max-width: 480px) { 
   .title {
-  color:black;
-  font-size: 20px;
-  padding: 0vh 10vw 0vh 10vw;
-  border-bottom: groove #000000;
+    color:black;
+    width: 80vw;
+    font-size: 20px;
+    padding: 0vh 10vw 0vh 10vw;
+    text-align:center
+    border-bottom: groove #000000;
+    opacity: 0;
   }
 }
 
@@ -90,6 +93,10 @@ h3{
 .p-box p {
 	width: 80%;
 	margin: 0 auto;
+}
+
+.sketch-holder{
+  margin: 0;
 }
 
 
