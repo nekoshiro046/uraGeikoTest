@@ -14,8 +14,6 @@ var apperCircuit = true;
 var markers = [];
 var explorer = new Array();
 
-
-
 // function windowResized(){
 // 	resizeCanvas(windowWidth, windowHeight);
 // }
@@ -49,11 +47,11 @@ function initMarkers(){
   markers[3] = new marker(width/2,height/3-20,[0,0,0,0,1,0,0,0]);
   markers[4] = new marker(width/2-(height/3-height/5),height/5,[0,0,0,0,1,0,0,0]);
 
-  markers[5] = new marker(width/2+30,height/2,[1,1,1,0,1,0,1,0]);
-  markers[6] = new marker(width/2+30,height/3,[1,0,1,0,1,0,1,0]);
+  markers[5] = new marker(width/2+20,height/2,[1,1,1,0,1,0,1,0]);
+  markers[6] = new marker(width/2+20,height/3,[1,0,1,0,1,0,1,0]);
   markers[7] = new marker(width/5*3,height/2,[0,0,0,1,0,0,0,0]);
-  markers[8] = new marker(width/2+30+height/10,height/2+height/10,[0,0,0,1,0,0,0,0]);
-  markers[9] = new marker(width/2+30+height/10+height/20,height/2+height/10-height/20,[0,0,0,0,0,1,0,0]);
+  markers[8] = new marker(width/2+20+height/10,height/2+height/10,[0,0,0,1,0,0,0,0]);
+  markers[9] = new marker(width/2+20+height/10+height/20,height/2+height/10-height/20,[0,0,0,0,0,1,0,0]);
 
   markers[10] = new marker(width/2-width/10,height/2,[0,0,0,0,0,0,0,1]);
   markers[11] = new marker(width/2-width/10 - height/10,height/2 + height/10 ,[1,0,0,0,0,0,0,0]);
