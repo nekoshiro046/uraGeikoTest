@@ -25,6 +25,7 @@ function setup() {
     canvas.position(0,0);
     canvas.parent('sketch-holder');
     canvas.style('z-index','-1');
+    canvas.style('position','fixed');
     //canvas.position(0, 0);
     //canvas.class("pcanvas");
 
@@ -258,10 +259,11 @@ class Explorer{
     var getCol = get(this.position.x, this.position.y);
     if((red(getCol) + green(getCol) +  blue(getCol)) != 0 && (red(getCol) < 3 )){
       this.blocked = true;
-      stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 0, 3),
-            map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 231, 4),
-            map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 216, 18));
-      ellipse(this.position.x+this.land * sin(this.angle), this.position.y+this.land * cos(this.angle), 7, 7);
+      // stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 0, 3),
+      //       map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 231, 4),
+      //       map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 216, 18));
+      // // ellipse(this.position.x+this.land * sin(this.angle), this.position.y+this.land * cos(this.angle), 5, 5);
+      // ellipse(this.position.x, this.position.y, 5, 5);
       // return;
     }
     // if((red(getCol) < 3 )){
@@ -285,15 +287,4 @@ class Explorer{
     pop();
 
   }
-
-
-
-  // draw(){
-  //   stroke(map(dist(this.location.x, this.location.y, width/2, height/2), 0, 400, 255, 3),
-  //         map(dist(this.location.x, this.location.y, width/2, height/2), 0, 400, 100, 4),
-  //         map(dist(this.location.x, this.location.y, width/2, height/2), 0, 400, 20, 18));
-  //   line(old_x, old_y, this.location.x, this.location.y);
-  // }
-
-
 }
