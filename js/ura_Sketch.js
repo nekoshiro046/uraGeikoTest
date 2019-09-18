@@ -23,7 +23,7 @@ function setup() {
     canvas.position(0,0);
     canvas.parent('sketch-holder');
     canvas.style('z-index','-1');
-    canvas.style('position','fixed');
+    // canvas.style('position','fixed');
     //canvas.position(0, 0);
     //canvas.class("pcanvas");
 
