@@ -53,18 +53,19 @@ h3{
 
 .blank {
 	margin-top: 110vh;
-  	background-color: #ffffff;
+  background-color: #ffffff;
 }
 .contents{
 	width: 100vw;
 	height: 100%;
 }
 .p-box{
-	width: 50%;
+	width: 80%;
+  height: auto;
 	padding-top: 25px;
 	padding-bottom: 100px;
 	
-	margin-bottom: 50vh;
+	margin-bottom: 5vh;
 	margin-right: auto;
 	margin-left: auto;
 	color: #ffffff;
@@ -75,10 +76,15 @@ h3{
 
 @media screen and (max-width:480px){
   .p-box{
-  	width: 50%;
+  	width: 80%;
+    height: 50vh;
     padding-top: 10px;
     margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
     color: #ffffff;
+    border-right: solid 3px #ffffff;
+    border-left :solid 3px #ffffff;
   }
 }
 
@@ -97,6 +103,7 @@ h3{
 
 .sketch-holder{
   margin: 0;
+  height: 100vh;
 }
 
 
