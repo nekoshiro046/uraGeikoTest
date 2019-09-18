@@ -39,26 +39,55 @@ function setup() {
 
 }
 
+// function initMarkers(){
+//   //８方位(direction) 0:下 2:右 4:上 6:左
+//   markers[0] = new marker(width/2,height/2,[1,0,1,0,1,0,1,0]);
+//   markers[1] = new marker(width/2,height/3,[0,0,1,0,1,1,0,0]);
+//   markers[2] = new marker(width/2-(height/3-height/5 ),height/5,[0,0,0,0,1,0,0,0]);
+//   markers[3] = new marker(width/2,height/3-20,[0,0,0,0,1,0,0,0]);
+//   markers[4] = new marker(width/2-(height/3-height/5),height/5,[0,0,0,0,1,0,0,0]);
+
+//   markers[5] = new marker(width/2+20,height/2,[1,1,1,0,1,0,1,0]);
+//   markers[6] = new marker(width/2+20,height/3,[1,0,1,0,1,0,1,0]);
+//   markers[7] = new marker(width/5*3,height/2,[0,0,0,1,0,0,0,0]);
+//   markers[8] = new marker(width/2+20+height/10,height/2+height/10,[0,0,0,1,0,0,0,0]);
+//   markers[9] = new marker(width/2+20+height/10+height/20,height/2+height/10-height/20,[0,0,0,0,0,1,0,0]);
+
+//   markers[10] = new marker(width/2-width/10,height/2,[0,0,0,0,0,0,0,1]);
+//   markers[11] = new marker(width/2-width/10 - height/10,height/2 + height/10 ,[1,0,0,0,0,0,0,0]);
+//   markers[12] = new marker(width/2,height/2 + height/5,[1,0,0,0,0,0,1,0]);
+//   markers[13] = new marker(width/2,height/2 + height/5 + 10,[0,0,0,0,0,0,0,1]);
+//   markers[14] = new marker(width/2-width/10 - height/10,height/2 + height/5,[1,0,0,0,0,0,1,0]);
+//   markers[15] = new marker(width/2 -15,height/2 + height/5 + 10 +15,[1,0,0,0,0,0,0,0]);
+// }
 function initMarkers(){
-  //８方位(direction) 0:下 2:右 4:上 6:左
-  markers[0] = new marker(width/2,height/2,[1,0,1,0,1,0,1,0]);
-  markers[1] = new marker(width/2,height/3,[0,0,1,0,1,1,0,0]);
-  markers[2] = new marker(width/2-(height/3-height/5 ),height/5,[0,0,0,0,1,0,0,0]);
-  markers[3] = new marker(width/2,height/3-20,[0,0,0,0,1,0,0,0]);
-  markers[4] = new marker(width/2-(height/3-height/5),height/5,[0,0,0,0,1,0,0,0]);
+    var cx = width/2;var cy = height/2;
+    var c3x = width/3;var c3y = height/3;var c32x = c3x*2;var c32y = c3y*2;
+    var margin_01 = 60;var margin_02 = margin_01/2;var margin_03 = margin_01/3;
+    
+    //８方位(direction) 0:下 2:右 4:上 6:左
+    markers[0] = new marker(cx,cy,[1,0,1,0,1,0,0,1]);
+    markers[1] = new marker(cx,c3y,[0,0,1,0,1,0,1,0]);
+    markers[2] = new marker(cx-margin_01,c3y,[0,0,0,0,0,1,0,0]);
+    markers[3] = new marker(cx-margin_01*2,c3y - margin_01,[0,0,0,0,1,0,0,0]);
 
-  markers[5] = new marker(width/2+20,height/2,[1,1,1,0,1,0,1,0]);
-  markers[6] = new marker(width/2+20,height/3,[1,0,1,0,1,0,1,0]);
-  markers[7] = new marker(width/5*3,height/2,[0,0,0,1,0,0,0,0]);
-  markers[8] = new marker(width/2+20+height/10,height/2+height/10,[0,0,0,1,0,0,0,0]);
-  markers[9] = new marker(width/2+20+height/10+height/20,height/2+height/10-height/20,[0,0,0,0,0,1,0,0]);
-
-  markers[10] = new marker(width/2-width/10,height/2,[0,0,0,0,0,0,0,1]);
-  markers[11] = new marker(width/2-width/10 - height/10,height/2 + height/10 ,[1,0,0,0,0,0,0,0]);
-  markers[12] = new marker(width/2,height/2 + height/5,[1,0,0,0,0,0,1,0]);
-  markers[13] = new marker(width/2,height/2 + height/5 + 10,[0,0,0,0,0,0,0,1]);
-  markers[14] = new marker(width/2-width/10 - height/10,height/2 + height/5,[1,0,0,0,0,0,1,0]);
-  markers[15] = new marker(width/2 -15,height/2 + height/5 + 10 +15,[1,0,0,0,0,0,0,0]);
+    markers[4] = new marker(cx + margin_02,cy,[1,0,1,0,1,0,0,0]);
+    markers[5] = new marker(cx + margin_02,c3y,[0,0,1,0,1,0,0,0]);
+    markers[6] = new marker(cx + margin_02*5,c3y,[1,0,0,0,0,0,0,0]);
+    markers[7] = new marker(cx + margin_02*5,c3y + margin_01,[0,0,0,0,0,0,0,1]);
+    markers[8] = new marker(cx + margin_02*5 - margin_01,cy,[0,1,0,0,0,0,0,0]);
+    markers[9] = new marker(cx + margin_02,c32y,[0,0,1,0,0,0,0,0]);
+    // markers[10] = new marker(cx + margin_02*5 - margin_01 + c3y/2,c32y,[0,0,1,0,0,0,0,0]);
+      // push();
+      // strokeWeight(10);
+      // point(cx + margin_02,margin_032);
+      // pop();
+    markers[10] = new marker(cx,c32y,[1,0,0,0,0,0,1,0]);
+    markers[11] = new marker(cx-margin_01,c32y,[0,0,0,0,0,0,0,1]);
+    // markers[12] = new marker(width/2,height/2 + height/5,[1,0,0,0,0,0,1,0]);
+    // markers[13] = new marker(width/2,height/2 + height/5 + 10,[0,0,0,0,0,0,0,1]);
+    // markers[14] = new marker(width/2-width/10 - height/10,height/2 + height/5,[1,0,0,0,0,0,1,0]);
+    // markers[15] = new marker(width/2 -15,height/2 + height/5 + 10 +15,[1,0,0,0,0,0,0,0]);
 }
 
 function serchDirection(mar){
@@ -67,7 +96,6 @@ function serchDirection(mar){
       append(explorer, new Explorer(mar.position,i));
     }
   }
-
 }
 
 
@@ -89,10 +117,21 @@ function draw() {
 
         for (var i = 0; i < explorer.length; i++) {
             for (var j = 0; j < markers.length; j++) {
-                if(dist(explorer[i].position.x,explorer[i].position.y,markers[j].position.x,markers[j].position.y) < 5){
+                if(dist(explorer[i].position.x + explorer[i].speed * sin(explorer[i].angle)/2,
+                    explorer[i].position.y  + explorer[i].speed * cos(explorer[i].angle)/2
+                    ,markers[j].position.x,markers[j].position.y) < 5){
+                    // push();
+                    // noFill();
+                    // stroke(map(dist(explorer[i].position.x, explorer[i].position.y, width/2, height/2), 0, 500, 0, 3),
+                    //         map(dist(explorer[i].position.x, explorer[i].position.y, width/2, height/2), 0, 500, 231, 4),
+                    //         map(dist(explorer[i].position.x, explorer[i].position.y, width/2, height/2), 0, 500, 216, 18));
+                    // ellipse(explorer[i].position.x + explorer[i].speed * sin(explorer[i].angle),
+                    // explorer[i].position.y  + explorer[i].speed * cos(explorer[i].angle),7,7);
+
                     explorer.splice(i, 1);
                     serchDirection(markers[j]);
                     markers.splice(j, 1);
+                    // pop();
                 }
             }
         }
@@ -194,9 +233,9 @@ function Particle(new_location, new_angle) {
 
         strokeWeight(2);
         // draw line (ja izdzesh uzrodas tikai galapunkti)
-        stroke(map(dist(this.location.x, this.location.y, width/2, height/2), 0, 400, 242, 3),
-        	map(dist(this.location.x, this.location.y, width/2, height/2), 0, 400, 123, 4),
-        	map(dist(this.location.x, this.location.y, width/2, height/2), 0, 400, 0, 18));
+        stroke(map(dist(this.location.x, this.location.y, width/2, height/2), 0, 500, 242, 3),
+        	map(dist(this.location.x, this.location.y, width/2, height/2), 0, 500, 123, 4),
+        	map(dist(this.location.x, this.location.y, width/2, height/2), 0, 500, 0, 18));
         strokeWeight(2);
         line(old_x, old_y, this.location.x, this.location.y);
 
@@ -250,12 +289,12 @@ class Explorer{
     var old_x = this.position.x;
     var old_y = this.position.y;
 
-        // move current particle
+    // move current particle
     this.position.x += this.speed * sin(this.angle);
     this.position.y += this.speed * cos(this.angle);
 
     var getCol = get(this.position.x, this.position.y);
-    if((red(getCol) + green(getCol) +  blue(getCol)) != 0 && (red(getCol) < 3 )){
+    if((red(getCol) + green(getCol) +  blue(getCol)) != 0 && (red(getCol) <= 3 )){
       this.blocked = true;
       // stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 0, 3),
       //       map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 231, 4),
@@ -270,9 +309,9 @@ class Explorer{
     // }
     strokeWeight(5);
 
-    stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 0, 3),
-            map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 231, 4),
-            map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 216, 18));
+    stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 0, 3),
+            map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 231, 4),
+            map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 216, 18));
     line(old_x, old_y, this.position.x, this.position.y);
 
     // var getCol = get(this.position.x + this.speed * sin(this.angle), this.position.y + this.speed * cos(this.angle));
