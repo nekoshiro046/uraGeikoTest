@@ -1,9 +1,13 @@
-var markers = [];
-var explorer = new Array();
-
-
+var imgs = [];
+var t = 0;
 // preload the images to be used for the checkboxes
 function preload(){
+  imgs[0] = loadImage('assets/sketch02_imgs/pic01.jpg');
+  imgs[1] = loadImage('assets/sketch02_imgs/pic02.jpg');
+  imgs[2] = loadImage('assets/sketch02_imgs/pic03.jpg');
+  imgs[3] = loadImage('assets/sketch02_imgs/pic04.jpg');
+  imgs[4] = loadImage('assets/sketch02_imgs/pic05.jpg');
+  imgs[5] = loadImage('assets/sketch02_imgs/pic06.jpg');
 }
 
 function setup() {
@@ -17,132 +21,55 @@ function setup() {
     // setup drawing
   smooth();
   strokeWeight(5);
+  frameRate(16);
     // background(3,4,18);
   stroke(255);
-
-  initMarkers();
-  // point(width/2+40+height/10+height/20,height/2+height/10-height/20);
-
-  serchDirection(markers[0]);
+  rectMode(CENTER);
   
-}
-
-function initMarkers(){
-  //８方位(direction) 0:下 2:右 4:上 6:左
-  markers[0] = new marker(width/2,height/2,[1,0,1,0,1,0,1,0]);
-  markers[1] = new marker(width/2,height/3,[0,0,1,0,1,1,0,0]);
-  markers[2] = new marker(width/2-(height/3-height/4),height/4,[0,0,0,0,1,0,0,0]);
-  markers[3] = new marker(width/2,height/3-20,[0,0,0,0,1,1,0,0]);
-  markers[4] = new marker(width/2-(height/3-height/4),height/4-20,[0,0,0,0,1,0,0,0]);
-
-  markers[5] = new marker(width/2+30,height/2,[1,1,1,0,1,0,1,0]);
-  markers[6] = new marker(width/2+30,height/3,[1,0,1,0,1,0,1,0]);
-  markers[7] = new marker(width/5*3,height/2,[0,0,0,1,0,0,0,0]);
-  markers[8] = new marker(width/2+30+height/10,height/2+height/10,[0,0,0,1,0,0,0,0]);
-  markers[9] = new marker(width/2+30+height/10+height/20,height/2+height/10-height/20,[0,0,0,0,0,1,0,0]);
-
-  markers[10] = new marker(width/2-width/10,height/2,[0,0,0,0,0,0,0,1]);
-  markers[11] = new marker(width/2-width/10 - height/10,height/2 + height/10 ,[1,0,0,0,0,0,0,0]);
-  markers[12] = new marker(width/2,height/2 + height/5,[1,0,0,0,0,0,1,0]);
-  markers[13] = new marker(width/2,height/2 + height/5 + 10,[0,0,0,0,0,0,0,1]);
-  markers[14] = new marker(width/2-width/10 - height/10,height/2 + height/5,[1,0,0,0,0,0,1,0]);
-  markers[15] = new marker(width/2 -15,height/2 + height/5 + 10 +15,[1,0,0,0,0,0,0,0]);
-}
-
-function serchDirection(mar){
-  for (var i = 0; i < 8; i++) {
-    if(mar.direction[i] != 0){
-      append(explorer, new Explorer(mar.position,i));
-    }
-  }
-
 }
 
 function draw() {
-  for (var i = 0; i < explorer.length; i++) {
-    explorer[i].update();
-    if (explorer[i].blocked) explorer.splice(i, 1);
+  var rn = int(random(1,3));
+  switch(rn){
+    case 0:
+      return;
+    case 1:
+      drawScene01();
+      break;
+    case 2:
+      drawScene02();
+      break;  
+    case 3:
+      drawScene03();
+      break;  
+    default:
+      break;
   }
-
-  for (var i = 0; i < explorer.length; i++) {
-    for (var j = 0; j < markers.length; j++) {
-      if(dist(explorer[i].position.x,explorer[i].position.y,markers[j].position.x,markers[j].position.y) < 5){
-        explorer.splice(i, 1);
-        serchDirection(markers[j]);
-        markers.splice(j, 1);
-      }
-    }
-  }
-
-  // for (var i = 0; i < explorer.length; i++) {
-  //   explorer[i].draw();
-  // }
-
-  
-
-
-  
+  // drawScene01();
 }
 
-//----------------------------------------------------
-class marker{
-  //８方位(direction) 0:下 2:右 4:上 6:左
-  constructor(x,y,direction){
-    this.position = createVector(x,y);
-    this.direction = direction;
-    this.prePosition = this.position;
-
+function drawScene01(){
+  push();
+  colorMode(HSB);
+  background(0);
+  let w = width;
+  let h = height;
+  for (x = 5 ; x < w ; x += 10) {
+    fill(360, 0, 360);
+    rect(x, h, 10, random(0,2000));
   }
+  for (x = 5 ; x < w ; x += 10) {
+    fill(360, 0, 360);
+    rect(x, 0, 10, random(0,2000));
+  }
+  pop();
 }
 
-class Explorer{
-  constructor(pos,firstDirection){
-    this.position = createVector(pos.x,pos.y);
-    this.direction = firstDirection;//int 0~7
-    // this.prePosition = this.position;
-    this.speed = 5;
-    this.angle = firstDirection * PI / 4;
+function drawScene02(){
+  var rn = int(random(6));
+  image(imgs[rn],0,0,width,height);
+}
 
-    // status
-    this.blocked = false;
-  }
-
-  update(){
-    var old_x = this.position.x;
-    var old_y = this.position.y;
-
-        // move current particle
-    this.position.x += this.speed * sin(this.angle);
-    this.position.y += this.speed * cos(this.angle);
-
-    var getCol = get(this.position.x, this.position.y);
-    if((red(getCol) + green(getCol) +  blue(getCol)) != 0){
-      this.blocked = true;
-      // return;
-    }
-
-    stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 0, 3),
-            map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 231, 4),
-            map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 216, 18));
-    line(old_x, old_y, this.position.x, this.position.y);
-
-    // var getCol = get(this.position.x + this.speed * sin(this.angle), this.position.y + this.speed * cos(this.angle));
-    // var getCol = get(this.position.x, this.position.y);
-    // if((red(getCol) + green(getCol) +  blue(getCol)) != 0){
-    //   this.blocked = true;
-    //   return;
-    // }
-
-  }
-
-
-
-  // draw(){
-  //   stroke(map(dist(this.location.x, this.location.y, width/2, height/2), 0, 400, 255, 3),
-  //         map(dist(this.location.x, this.location.y, width/2, height/2), 0, 400, 100, 4),
-  //         map(dist(this.location.x, this.location.y, width/2, height/2), 0, 400, 20, 18));
-  //   line(old_x, old_y, this.location.x, this.location.y);
-  // }
-
-
+function drawScene03(){
+  
 }
