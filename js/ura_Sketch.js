@@ -3,9 +3,9 @@ var p = new Array();
 var side = 100;
 let song;
 var canvas;
-let clickNum = 15;//発生数
+let clickNum = 12;//発生数
 let clickCount = 0;//発生確認用カウンター
-var apperSpan = 45;//発生スパン闘値
+var apperSpan = 30;//発生スパン闘値
 var uraTriger = false;
 var fadeCount = 0;
 var apperUra = false;
@@ -23,7 +23,7 @@ function setup() {
     canvas.position(0,0);
     canvas.parent('sketch-holder');
     canvas.style('z-index','-1');
-    // canvas.style('position','fixed');
+    canvas.style('position','fixed');
     //canvas.position(0, 0);
     //canvas.class("pcanvas");
 
