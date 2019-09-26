@@ -23,7 +23,11 @@ function setup() {
     canvas.position(0,0);
     canvas.parent('sketch-holder');
     canvas.style('z-index','-1');
-    canvas.style('position','fixed');
+    canvas.style('padding','0');
+    canvas.style('margin','0');
+    canvas.style('width','100%');
+    canvas.style('height','auto');
+    // canvas.style('position','fixed');
     //canvas.position(0, 0);
     //canvas.class("pcanvas");
 
@@ -343,3 +347,4 @@ class Explorer{
 
   }
 }
+

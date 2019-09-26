@@ -12,9 +12,12 @@ function preload(){
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
-  canvas.position(0,0);
-  canvas.parent('sketch-holder');
+  // canvas.position(0,0);
+  canvas.parent('sketch-holder2');
   canvas.style('z-index','-1');
+  canvas.style('padding','0');
+    canvas.style('margin','0');
+    canvas.style('width','100%');
     //canvas.position(0, 0);
     //canvas.class("pcanvas");
 

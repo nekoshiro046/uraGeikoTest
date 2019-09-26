@@ -17,9 +17,11 @@ body{
 	background-color: #030412;
   padding: 0;
 	margin: 0;
-	width: 100vw;
+	width: 100%;
+  max-width: 100%;
 	height: 100vh;
   overflow-x: hidden;
+
 }
 
 main {
@@ -27,7 +29,7 @@ main {
 	/*text-orientation: upright;  すべて縦方向に表示 
 	writing-mode: vertical-rl;*/
 	/*background-color: #030412;*/
-  	margin: 0;
+  margin: 0;
 
 }
 
@@ -47,11 +49,12 @@ h3{
 
 .title {
   color:black;
-  width: 80vw;
+  width: 80%;
+  max-width: 80%;
   height: auto;
   margin: 0 auto;
   margin-top: 8vw;
-  padding: 0vh 10vw 0vh 10vw;
+  padding: 0vh 10% 0vh 10%;
   text-align:center
   border-bottom: groove #000000;
   opacity: 0;
@@ -60,11 +63,12 @@ h3{
 @media screen and (max-width: 480px) { 
   .title {
     color:black;
-    width: 80vw;
+    width: 80%;
+    max-width: 80%;
     height: auto;
     margin: 0 auto;
     margin-top: 8vw;
-    padding: 0vh 10vw 0vh 10vw;
+    padding: 0vh 10% 0vh 10%;
     text-align:center
     border-bottom: groove #000000;
     opacity: 0;
@@ -77,15 +81,19 @@ h3{
   background-color: #ffffff;
 }
 .contents{
-	width: 100vw;
-	height: 100%;
+	width: 100%;
+  max-width: 100%;
+	height: auto;
 }
 
 .p-box{
 	width: 80%;
+  max-width: 80%;
   height: auto;
 	padding-top: 25px;
 	padding-bottom: 25px;
+  padding-left: 0;
+  padding-right: 0;
 	text-align:center;
 	margin-bottom: 5vh;
 	margin-right: auto;
@@ -99,9 +107,12 @@ h3{
 @media screen and (max-width:480px){
   .p-box{
   	width: 80%;
+    max-width: 80%;
     height: auto;
     padding-top: 25px;
     padding-bottom: 25px;
+    padding-left: 0;
+    padding-right: 0;
     text-align:center;
     margin-bottom: 5vh;
     margin-right: auto;
@@ -118,16 +129,19 @@ h3{
 
 .headingImg{
   width: 80%;
+  max-width: 80%;
   height: auto;
   margin: 0 auto;
 }
 
 .p-box h3 {
   	width: 80%;
+    max-width: 80%;
   	margin: 0 auto;
 }
 .p-box p {
 	width: 80%;
+  max-width: 80%;
 	margin: 0 auto;
   text-align:left;
 }
