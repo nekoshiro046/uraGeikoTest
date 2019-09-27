@@ -46,6 +46,29 @@ h3{
   margin: 15vh 10vh 5vh 10vh;
   border-bottom: groove #ff0000;
 }
+/*ul {
+  list-style: none;
+  float:left;
+}*/
+ul.foo {
+    display:table;
+    table-layout:fixed;
+    width:80%;
+    padding-bottom: 40px;
+    margin:2vh auto;
+}
+ul.foo li {
+    width:35%;
+    max-width: 50%;
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    background-color:red;
+    margin: 4vh 5vw 2vh 5vw;
+    border-left:1px solid white;
+    border-right:1px solid white;
+    
+}
 
 .title {
   color:black;
