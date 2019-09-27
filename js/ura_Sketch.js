@@ -1,7 +1,5 @@
 var p = new Array();
 
-var side = 100;
-let song;
 var canvas;
 let clickNum = 12;//発生数
 let clickCount = 0;//発生確認用カウンター
@@ -22,13 +20,12 @@ function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0,0);
     canvas.parent('sketch-holder');
-    canvas.style('z-index','-1');
+    canvas.style('z-index','-99');
     canvas.style('padding','0');
     canvas.style('margin','0');
     canvas.style('width','100%');
     canvas.style('height','auto');
     // canvas.style('position','fixed');
-    //canvas.position(0, 0);
     //canvas.class("pcanvas");
 
     // setup drawing
@@ -197,9 +194,16 @@ function draw() {
 
     // }
     else{
+        canvas.style('z-index','-99');
         $(function() {
  
           // 一旦hide()で隠してフェードインさせる
+
+          $(".title").css({
+            'position':"fixed",
+            'top':0,
+            'background-color':"rgba(3,4,18,0.8)"
+            });
           $(".title").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});
          
         });

@@ -21,6 +21,16 @@ body{
   max-width: 100%;
 	height: 100vh;
   overflow-x: hidden;
+}
+header{
+  transform: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 10vh;
+  z-index:2;
+  background-color: #030412;
 
 }
 
@@ -33,18 +43,19 @@ main {
 
 }
 
-header{
-}
-
-main{
-
-}
+/*.pace-running .wrapper {
+    display: none;
+}*/
 
 h3{
   text-align: center;
   font-size: 30px;
   margin: 15vh 10vh 5vh 10vh;
   border-bottom: groove #ff0000;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 /*ul {
   list-style: none;
@@ -54,8 +65,9 @@ ul.foo {
     display:table;
     table-layout:fixed;
     width:80%;
-    padding-bottom: 40px;
-    margin:2vh auto;
+    margin:auto;
+    margin-top: 2vh;
+    margin-bottom: 0;
 }
 ul.foo li {
     width:35%;
@@ -64,7 +76,6 @@ ul.foo li {
     vertical-align:middle;
     text-align:center;
     background-color:red;
-    margin: 4vh 5vw 2vh 5vw;
     border-left:1px solid white;
     border-right:1px solid white;
     
@@ -72,13 +83,13 @@ ul.foo li {
 
 .title {
   color:black;
+  position: fixed;
   width: 80%;
   max-width: 80%;
   height: auto;
   margin: 0 auto;
-  margin-top: 8vw;
-  padding: 0vh 10% 0vh 10%;
-  text-align:center
+  /*margin-top: 7vw;*/
+  padding: 5vh 10% 0vh 10%;
   border-bottom: groove #000000;
   opacity: 0;
 }
@@ -86,13 +97,13 @@ ul.foo li {
 @media screen and (max-width: 480px) { 
   .title {
     color:black;
+    position: fixed;
     width: 80%;
     max-width: 80%;
     height: auto;
     margin: 0 auto;
-    margin-top: 8vw;
-    padding: 0vh 10% 0vh 10%;
-    text-align:center
+    /*margin-top: 2vw;*/
+    padding: 3vh 10% 0vh 10%;
     border-bottom: groove #000000;
     opacity: 0;
   }
