@@ -190,6 +190,25 @@ ul.foo li {
   margin: 0;
   height: 100vh;
 }
+.memberBox{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+}
+.member{
+  width:calc(100% / 3);
+  height:calc(90% / 7);
+  margin-right: 0;
+}
+.memberImg {
+  width:80%;
+  margin: 0px;
+}
 
 .footer{
   width: 80vw;
