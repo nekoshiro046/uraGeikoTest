@@ -348,3 +348,12 @@ class Explorer{
   }
 }
 
+//---------------------
+function mov1Btn(){
+    var mov = document.getElementById('mov')
+    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/355798761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>'
+}
+function mov2Btn(){
+    var mov = document.getElementById('mov')
+    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/353201140" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>'
+}

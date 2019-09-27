@@ -36,7 +36,7 @@
         <!-- <script src="js/ura_Sketch.js"></script>
      -->
     </head>
-    <body ontouchmove="event.preventDefault()">
+    <body>
         <div id="sketch-holder" onclick=""></div>
         <header>
             <!-- <h1 class="title">URA GEIKO SAI</h1> -->
@@ -67,9 +67,10 @@
                     <!-- <h3>-MOVIE-</h3> -->
                     <h3>-<img class = "headingImg" src="assets/image/ura_movie.png"">-</h3>
                     <p class="p-margin"> </p>
-                    <iframe class="mov-container" src="https://player.vimeo.com/video/355798761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    <p>movie No.01</p>
-                    <p>仮テキスト</p>
+                    <div id = "mov" ><iframe class="mov-container" src="https://player.vimeo.com/video/355798761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+
+                    <p><input class = "mov1Btn" type="button" value="movie No.01" onclick="mov1Btn()"></p>
+                    <p><input class = "mov2Btn" type="button" value="movie No.02" onclick="mov2Btn()"></p>
                 </div>
                 <div class="p-box">
                     <h3>-BACK TO OMOTE-</h3>
