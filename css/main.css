@@ -216,6 +216,11 @@ ul.foo p {
   height:100%;
 
 }
+.pakuto{
+  width:calc(100% / 2);
+  height:calc(90% / 7);
+  margin-right: calc(100% / 3);
+}
 .member{
   width:calc(100% / 3);
   height:calc(90% / 7);
