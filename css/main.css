@@ -75,10 +75,26 @@ ul.foo li {
     display:table-cell;
     vertical-align:middle;
     text-align:center;
-    background-color:red;
+    /*background-color:red;
     border-left:1px solid white;
     border-right:1px solid white;
+    margin: 10vw;*/
     
+}
+ul.foo p {
+    text-align:center;
+    /*background-color:red;*/
+    border-left:1px solid white;
+    border-right:1px solid white;
+    margin: 0 2vw;
+    
+}
+.btn-sf-like1{
+  background-color:red;
+}
+.btn-sf-like2{
+  background-color:#565656;
+
 }
 
 .title {
@@ -111,7 +127,7 @@ ul.foo li {
 
 
 .blank {
-	margin-top: 110vh;
+	margin-top: 102vh;
   background-color: #ffffff;
 }
 .contents{

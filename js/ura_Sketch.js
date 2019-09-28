@@ -354,10 +354,26 @@ class Explorer{
 
 //---------------------
 function mov1Btn(){
-    var mov = document.getElementById('mov')
-    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/355798761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>'
+    var mov = document.getElementById('mov');
+    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/355798761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    $(".btn-sf-like1").css({
+        'background-color':"red"
+    });
+    $(".btn-sf-like2").css({
+        'background-color':"#565656"
+    });
 }
 function mov2Btn(){
-    var mov = document.getElementById('mov')
-    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/353201140" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>'
+    var mov = document.getElementById('mov');
+    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/353201140" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    $(".btn-sf-like2").css({
+        'background-color':"red"
+    });
+    $(".btn-sf-like1").css({
+        'background-color':"#565656"
+    });
 }
+
+$(function() {
+    $('html,body').animate({ scrollTop: 0 }, '1');
+});
