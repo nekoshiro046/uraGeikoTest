@@ -92,9 +92,8 @@ ul.foo p {
 .btn-sf-like1{
   background-color:red;
 }
-.btn-sf-like2{
+.btn-sf-like2, .btn-sf-like3, .btn-sf-like0{
   background-color:#565656;
-
 }
 
 .title {
@@ -175,17 +174,17 @@ ul.foo p {
 
 .roundText{
   font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
-  /*position: relative;*/
-  top: 0;
-  left: 0;
-  bottom: 0;
+  top: 5vw;
+  left: 5vw;
+  /*bottom: 0;*/
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /*align-items: center;*/
   /*width: 550px;*/
-  height: 50px;
-  margin: auto 0;
+  /*height: 50px;*/
+  /*margin: auto 0;*/
   z-index: 1;
+  transform-origin: top left;
   transform: rotate(-90deg);
 }
 

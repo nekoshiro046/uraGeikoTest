@@ -362,6 +362,12 @@ function mov1Btn(){
     $(".btn-sf-like2").css({
         'background-color':"#565656"
     });
+    $(".btn-sf-like3").css({
+        'background-color':"#565656"
+    });
+    $(".btn-sf-like0").css({
+        'background-color':"#565656"
+    });
 }
 function mov2Btn(){
     var mov = document.getElementById('mov');
@@ -370,6 +376,44 @@ function mov2Btn(){
         'background-color':"red"
     });
     $(".btn-sf-like1").css({
+        'background-color':"#565656"
+    });
+    $(".btn-sf-like3").css({
+        'background-color':"#565656"
+    });
+    $(".btn-sf-like0").css({
+        'background-color':"#565656"
+    });
+}
+function mov3Btn(){
+    var mov = document.getElementById('mov');
+    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/355798761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    $(".btn-sf-like3").css({
+        'background-color':"red"
+    });
+    $(".btn-sf-like2").css({
+        'background-color':"#565656"
+    });
+    $(".btn-sf-like0").css({
+        'background-color':"#565656"
+    });
+    $(".btn-sf-like1").css({
+        'background-color':"#565656"
+    });
+}
+function mov0Btn(){
+    var mov = document.getElementById('mov');
+    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/353201140" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    $(".btn-sf-like0").css({
+        'background-color':"red"
+    });
+    $(".btn-sf-like1").css({
+        'background-color':"#565656"
+    });
+    $(".btn-sf-like3").css({
+        'background-color':"#565656"
+    });
+    $(".btn-sf-like2").css({
         'background-color':"#565656"
     });
 }
