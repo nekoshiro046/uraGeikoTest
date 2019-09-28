@@ -173,6 +173,22 @@ ul.foo p {
   }
 }
 
+.roundText{
+  font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
+  /*position: relative;*/
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*width: 550px;*/
+  height: 50px;
+  margin: auto 0;
+  z-index: 1;
+  transform: rotate(-90deg);
+}
+
 .p-margin{
   	padding-top: 20px;
 }
@@ -217,7 +233,7 @@ ul.foo p {
 
 }
 .pakuto{
-  width:calc(100% / 2);
+  width:calc((100% / 3 ) + 2vw);
   height:calc(90% / 7);
   margin-right: calc(100% / 3);
 }
