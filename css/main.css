@@ -191,6 +191,25 @@ ul.foo p {
   transform-origin: top left;
   transform: rotate(-90deg);
 }
+@media screen and (max-width:480px){
+  .p-box p.roundText{
+  font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
+  font-size: 20px;
+  width: 25vh;
+  height: 80vw;
+  /*top: 0;*/
+  bottom: -40%;
+  left: -7vw;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  /*align-items: center;*/
+  /*margin: auto 0;*/
+  z-index: 1;
+  transform-origin: top left;
+  transform: rotate(-90deg);
+}
+}
 
 .p-margin{
   	padding-top: 20px;
