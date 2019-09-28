@@ -139,6 +139,7 @@ ul.foo p {
 	width: 80%;
   max-width: 80%;
   height: auto;
+  position: relative;
 	padding-top: 25px;
 	padding-bottom: 25px;
   padding-left: 0;
@@ -158,6 +159,7 @@ ul.foo p {
   	width: 80%;
     max-width: 80%;
     height: auto;
+    position: relative;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 0;
@@ -172,16 +174,18 @@ ul.foo p {
   }
 }
 
-.roundText{
+.p-box p.roundText{
   font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
-  top: 5vw;
-  left: 5vw;
-  /*bottom: 0;*/
+  font-size: 20px;
+  width: 25vh;
+  height: 80vw;
+  /*top: 0;*/
+  bottom: -50%;
+  left: -5vw;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   /*align-items: center;*/
-  /*width: 550px;*/
-  /*height: 50px;*/
   /*margin: auto 0;*/
   z-index: 1;
   transform-origin: top left;
