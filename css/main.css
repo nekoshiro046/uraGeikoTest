@@ -180,11 +180,12 @@ ul.foo p {
   width: 25vh;
   height: 10vw;
   /*top: 0;*/
-  bottom: -50%;
+  bottom: -10%;
   left: -5vw;
   position: absolute;
   display: flex;
   justify-content: space-between;
+  text-align:left;
   /*align-items: center;*/
   /*margin: auto 0;*/
   z-index: 1;
@@ -198,11 +199,12 @@ ul.foo p {
   width: 25vh;
   height: 80vw;
   /*top: 0;*/
-  bottom: -40%;
+  bottom: -5%;
   left: -7vw;
   position: absolute;
   display: flex;
   justify-content: space-between;
+  text-align:left;
   /*align-items: center;*/
   /*margin: auto 0;*/
   z-index: 1;
