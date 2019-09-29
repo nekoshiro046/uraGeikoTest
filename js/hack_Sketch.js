@@ -16,8 +16,8 @@ function preload() {
 
 
 function setup() {
-	// canvas = createCanvas(windowWidth, windowHeight);
-	canvas = createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
+	canvas = createCanvas(windowWidth, windowHeight);
+	// canvas = createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
     canvas.position(0,0);
     canvas.parent('sketch-holder');
     canvas.style('z-index','-99');
