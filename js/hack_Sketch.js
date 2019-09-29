@@ -56,7 +56,7 @@ function drawStreak() {
 	//It looks better with the line below IMO but it runs a lot slower (not quite real time)
 	//if(random()<0.07)tint(random(255), random(255), random(255));
 	
-	image(img, xChange - maxXChange, -maxYChange + y + yChange, img.width, h, 0, y, img.width, h);
-	// image(img, xChange - maxXChange, -maxYChange + y + yChange, width, h, 0, y, img.width * height / width, h);
+	// image(img, xChange - maxXChange, -maxYChange + y + yChange, img.width, h, 0, y, img.width, h);
+	image(img, xChange - maxXChange, -maxYChange + y + yChange, width, h, 0, y, width, h);
 	//copy(img, 0, y, img.width, h, xChange - maxXChange, -maxYChange + y + yChange, img.width, h);
 }
