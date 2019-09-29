@@ -26,7 +26,7 @@ function setup() {
     canvas.style('height','auto');
 	// createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
 	// background(3,4,18);
-	image(img, -maxXChange, -maxYChange);
+	image(img, -maxXChange, -maxYChange,width,img.width * height / width);
 	for (let i = 0; i < 100; i++) {
 		drawStreak()
 	}
@@ -57,5 +57,6 @@ function drawStreak() {
 	//if(random()<0.07)tint(random(255), random(255), random(255));
 	
 	image(img, xChange - maxXChange, -maxYChange + y + yChange, img.width, h, 0, y, img.width, h);
+	// image(img, xChange - maxXChange, -maxYChange + y + yChange, width, h, 0, y, img.width * height / width, h);
 	//copy(img, 0, y, img.width, h, xChange - maxXChange, -maxYChange + y + yChange, img.width, h);
 }
