@@ -16,7 +16,8 @@ function preload() {
 
 
 function setup() {
-	canvas = createCanvas(windowWidth, windowHeight);
+	// canvas = createCanvas(windowWidth, windowHeight);
+	canvas = createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
     canvas.position(0,0);
     canvas.parent('sketch-holder');
     canvas.style('z-index','-99');
@@ -27,15 +28,15 @@ function setup() {
 	// createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
 	// background(3,4,18);
 	// img.resize(width, height);
-	image(img, -maxXChange, -maxYChange,width,img.width * height / width);
+	// image(img, -maxXChange, -maxYChange,width,img.width * height / width);
 	for (let i = 0; i < 100; i++) {
-		drawStreak()
+		drawStreak();
 	}
 }
 
 function draw() {
 	for (let i = 0; i < height / 60; i++) { //dist(pmouseX, pmouseY, mouseX, mouseY) * 0.04; i++) {
-		drawStreak()
+		drawStreak();
 	}
 }
 
