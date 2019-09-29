@@ -15,12 +15,12 @@
 
 body{
 	background-color: #030412;
-  padding: 0;
+  	padding: 0;
 	margin: 0;
 	width: 100%;
-  max-width: 100%;
+  	max-width: 100%;
 	height: 100vh;
-  overflow-x: hidden;
+  	overflow-x: hidden;
 }
 header{
   transform: none;
@@ -51,7 +51,7 @@ h3{
   text-align: center;
   font-size: 30px;
   margin: 15vh 10vh 5vh 10vh;
-  border-bottom: groove #ff0000;
+  border-bottom: groove #ff7b00;
 }
 a {
   text-decoration: none;
@@ -90,7 +90,7 @@ ul.foo p {
     
 }
 .btn-sf-like1{
-  background-color:red;
+  background-color:#ff7b00;
 }
 .btn-sf-like2, .btn-sf-like3, .btn-sf-like0{
   background-color:#565656;
@@ -139,11 +139,11 @@ ul.foo p {
 	width: 80%;
   max-width: 80%;
   height: auto;
-  position: relative;
+  	position: relative;
 	padding-top: 25px;
 	padding-bottom: 25px;
-  padding-left: 0;
-  padding-right: 0;
+  	padding-left: 0;
+  	padding-right: 0;
 	text-align:center;
 	margin-bottom: 5vh;
 	margin-right: auto;

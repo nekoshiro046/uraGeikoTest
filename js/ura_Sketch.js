@@ -357,7 +357,7 @@ function mov1Btn(){
     var mov = document.getElementById('mov');
     mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/355798761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
     $(".btn-sf-like1").css({
-        'background-color':"red"
+        'background-color':"#ff7b00"
     });
     $(".btn-sf-like2").css({
         'background-color':"#565656"
@@ -373,7 +373,7 @@ function mov2Btn(){
     var mov = document.getElementById('mov');
     mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/353201140" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
     $(".btn-sf-like2").css({
-        'background-color':"red"
+        'background-color':"#ff7b00"
     });
     $(".btn-sf-like1").css({
         'background-color':"#565656"
@@ -387,9 +387,10 @@ function mov2Btn(){
 }
 function mov3Btn(){
     var mov = document.getElementById('mov');
-    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/355798761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    // mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/355798761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    mov.innerHTML = '<p style ="text-align:center;height:10vh;">coming soon</p>';
     $(".btn-sf-like3").css({
-        'background-color':"red"
+        'background-color':"#ff7b00"
     });
     $(".btn-sf-like2").css({
         'background-color':"#565656"
@@ -403,9 +404,10 @@ function mov3Btn(){
 }
 function mov0Btn(){
     var mov = document.getElementById('mov');
-    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/353201140" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    // mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/353201140" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    mov.innerHTML = '<p style ="text-align:center;height:10vh;">coming soon</p>';
     $(".btn-sf-like0").css({
-        'background-color':"red"
+        'background-color':"#ff7b00"
     });
     $(".btn-sf-like1").css({
         'background-color':"#565656"
