@@ -59,8 +59,3 @@ function drawStreak() {
 	image(img, xChange - maxXChange, -maxYChange + y + yChange, img.width, h, 0, y, img.width, h);
 	//copy(img, 0, y, img.width, h, xChange - maxXChange, -maxYChange + y + yChange, img.width, h);
 }
-
-function keyPressed() {
-	if (key == 's') save();
-	if (key == 'r') console.log(frameRate());
-}
