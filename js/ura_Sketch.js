@@ -122,9 +122,12 @@ function draw() {
 
         for (var i = 0; i < explorer.length; i++) {
             for (var j = 0; j < markers.length; j++) {
-                if(dist(explorer[i].position.x + explorer[i].speed * sin(explorer[i].angle)/2,
-                    explorer[i].position.y  + explorer[i].speed * cos(explorer[i].angle)/2
-                    ,markers[j].position.x,markers[j].position.y) < 5){
+                if(dist(explorer[i].position.x + explorer[i].speed * sin(explorer[i].angle)/5,
+                    explorer[i].position.y  + explorer[i].speed * cos(explorer[i].angle)/5,
+                    markers[j].position.x,markers[j].position.y) < 5){
+                    // if(dist(explorer[i].position.x,
+                    //     explorer[i].position.y,
+                    //     markers[j].position.x,markers[j].position.y) < 5){
                     // push();
                     // noFill();
                     // stroke(map(dist(explorer[i].position.x, explorer[i].position.y, width/2, height/2), 0, 500, 0, 3),
@@ -318,7 +321,8 @@ class Explorer{
       // stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 0, 3),
       //       map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 231, 4),
       //       map(dist(this.position.x, this.position.y, width/2, height/2), 0, 400, 216, 18));
-      // // ellipse(this.position.x+this.land * sin(this.angle), this.position.y+this.land * cos(this.angle), 5, 5);
+      // line(old_x, old_y, this.position.x, this.position.y);
+      // ellipse(this.position.x+this.land * sin(this.angle), this.position.y+this.land * cos(this.angle), 5, 5);
       // ellipse(this.position.x, this.position.y, 5, 5);
       // return;
     }
@@ -326,7 +330,7 @@ class Explorer{
     //   this.blocked = true;
     //   // return;
     // }
-    strokeWeight(5);
+    strokeWeight(3);
 
     stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 0, 3),
             map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 231, 4),

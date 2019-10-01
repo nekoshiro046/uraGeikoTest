@@ -13,7 +13,7 @@ function preload(){
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   // canvas.position(0,0);
-  canvas.parent('sketch-holder2');
+  canvas.parent('sketch-holder');
   canvas.style('z-index','-1');
   canvas.style('padding','0');
     canvas.style('margin','0');
@@ -24,7 +24,7 @@ function setup() {
     // setup drawing
   smooth();
   strokeWeight(5);
-  frameRate(16);
+  frameRate(8);
     // background(3,4,18);
   stroke(255);
   rectMode(CENTER);
