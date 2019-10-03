@@ -235,6 +235,7 @@ function draw() {
             'top':0,
             'left':0,
             'right':0,
+            'width': "100%"
             });
           $(".title").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});          
          
