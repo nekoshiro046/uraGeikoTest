@@ -43,8 +43,10 @@ header{
 }
 .headerLogoImg{
   width: 100%;
+  max-width: 600px;
   height: auto;
   max-height: 100vh;
+  margin: auto;
   opacity: 0;
 }
 
@@ -153,6 +155,12 @@ ul.foo p {
 .blank {
 	margin-top: 15vh;
   background-color: #ffffff;
+}
+@media screen and (max-width:480px){
+  .blank {
+    margin-top: 10vh;
+    background-color: #ffffff;
+  }
 }
 .contents{
 	width: 100%;

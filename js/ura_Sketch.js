@@ -164,12 +164,11 @@ function draw() {
 	        // 	noLoop();
          //    	print("loopstop");
 	        // }
-	        $(".titleImg").css({
-            'position':"absolute",
+	        $(".headerLogoImg").css({
+            'position':"fixed",
             'top':0,
             'left':0,
-            'right':0,
-            'margin':0
+            'right':0
             });
 	        $(".headerLogoImg").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});
         }
