@@ -28,9 +28,24 @@ header{
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 10vh;
+  /*height: 10vh;*/
+  height: 100%
   z-index:2;
   /*background-color: #030412;*/
+}
+.headerLogoBox{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+.headerLogoImg{
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  opacity: 0;
 }
 
 main {
@@ -136,7 +151,7 @@ ul.foo p {
 
 
 .blank {
-	margin-top: 102vh;
+	margin-top: 15vh;
   background-color: #ffffff;
 }
 .contents{

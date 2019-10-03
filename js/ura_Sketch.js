@@ -156,13 +156,22 @@ function draw() {
         if(markers.length < 3){
             // noLoop();
             // print("loopstop");
-            tint(255, fadeCount);
-	        image(img,0,0,width,height);
-	        fadeCount += 16;
-	        if(fadeCount > 255){
-	        	noLoop();
-            	print("loopstop");
-	        }
+
+         //    tint(255, fadeCount);
+	        // image(img,0,0,width,height);
+	        // fadeCount += 16;
+	        // if(fadeCount > 255){
+	        // 	noLoop();
+         //    	print("loopstop");
+	        // }
+	        $(".titleImg").css({
+            'position':"absolute",
+            'top':0,
+            'left':0,
+            'right':0,
+            'margin':0
+            });
+	        $(".headerLogoImg").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});
         }
     }
 
