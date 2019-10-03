@@ -15,12 +15,12 @@
 
 body{
 	background-color: #030412;
-  	padding: 0;
+  padding: 0;
 	margin: 0;
 	width: 100%;
-  	max-width: 100%;
+  max-width: 100%;
 	height: 100vh;
-  	overflow-x: hidden;
+  overflow-x: hidden;
 }
 header{
   transform: none;
@@ -31,7 +31,6 @@ header{
   height: 10vh;
   z-index:2;
   /*background-color: #030412;*/
-
 }
 
 main {
@@ -95,32 +94,42 @@ ul.foo p {
 .btn-sf-like2, .btn-sf-like3, .btn-sf-like0{
   background-color:#565656;
 }
-
 .title {
-  color:black;
   position: fixed;
-  width: 80%;
-  max-width: 80%;
-  height: auto;
+  width: 100%;
+  /*max-width: 600px;*/
+  height: 10vh;
   margin: 0 auto;
   /*margin-top: 7vw;*/
-  padding: 5vh 10% 0vh 10%;
-  border-bottom: groove #000000;
   opacity: 0;
 }
 
+.titleImg {
+  color:black;
+  position: fixed;
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+  /*margin-top: 7vw;*/
+  padding: 4vh 10% 1vh 10%;
+  border-bottom: groove #000000;
+  /*opacity: 0;*/
+}
+
 @media screen and (max-width: 480px) { 
-  .title {
+  .titleImg {
     color:black;
     position: fixed;
-    width: 80%;
-    max-width: 80%;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     margin: 0 auto;
+
     /*margin-top: 2vw;*/
-    padding: 3vh 10% 0vh 10%;
+    padding: 3vh 10% 1vh 10%;
     border-bottom: groove #000000;
-    opacity: 0;
+    /*opacity: 0;*/
   }
 }
 
@@ -139,13 +148,14 @@ ul.foo p {
 	width: 80%;
   max-width: 80%;
   height: auto;
-  	position: relative;
+  position: relative;
 	padding-top: 25px;
 	padding-bottom: 25px;
-  	padding-left: 0;
-  	padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 	text-align:center;
-	margin-bottom: 5vh;
+  margin-top: 3vh;
+	margin-bottom: 7vh;
 	margin-right: auto;
 	margin-left: auto;
 	color: #ffffff;
@@ -174,13 +184,14 @@ ul.foo p {
   }
 }
 
+
 .p-box p.roundText{
   font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
   font-size: 20px;
   width: 25vh;
   height: 10vw;
   /*top: 0;*/
-  bottom: -10%;
+  bottom: -5%;
   left: -5vw;
   position: absolute;
   display: flex;
@@ -194,23 +205,23 @@ ul.foo p {
 }
 @media screen and (max-width:480px){
   .p-box p.roundText{
-  font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
-  font-size: 20px;
-  width: 25vh;
-  height: 10vw;
-  /*top: 0;*/
-  bottom: -5%;
-  left: -7vw;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  text-align:left;
-  /*align-items: center;*/
-  /*margin: auto 0;*/
-  z-index: 1;
-  transform-origin: top left;
-  transform: rotate(-90deg);
-}
+    font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
+    font-size: 20px;
+    width: 25vh;
+    height: 10vw;
+    /*top: 0;*/
+    bottom: -5%;
+    left: -7vw;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    text-align:left;
+    /*align-items: center;*/
+    /*margin: auto 0;*/
+    z-index: 1;
+    transform-origin: top left;
+    transform: rotate(-90deg);
+  }
 }
 
 .p-margin{
@@ -218,10 +229,19 @@ ul.foo p {
 }
 
 .headingImg{
-  width: 100%;
-  max-width: 100%;
+  width: 80%;
+  max-width: 480px;
   height: auto;
   margin: 0 auto;
+}
+
+@media screen and (max-width:480px){
+  .headingImg{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
 }
 
 .p-box h3 {
@@ -244,7 +264,7 @@ ul.foo p {
 
 .sketch-holder{
   margin: 0;
-  height: 100vh;
+  height: 100%;
 }
 .memberBox{
   display: flex;

@@ -216,13 +216,17 @@ function draw() {
         $(function() {
  
           // 一旦hide()で隠してフェードインさせる
-
           $(".title").css({
             'position':"fixed",
-            'top':0,
             'background-color':"rgba(3,4,18,0.8)"
             });
-          $(".title").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});
+          $(".titleImg").css({
+            'position':"fixed",
+            'top':0,
+            'left':0,
+            'right':0
+            });
+          $(".title").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});          
          
         });
         // noLoop();
