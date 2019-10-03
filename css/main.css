@@ -206,6 +206,26 @@ ul.foo p {
   }
 }
 
+.p-box:before{
+  content: "";
+  border-right: solid 3px  #00E7D8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 4px);
+  height: 100%;
+}
+
+.p-box:after{
+  content: "";
+  border-right: solid 3px #F27B00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 4px);
+  height: 100%;
+}
+
 
 .p-box p.roundText{
   font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
@@ -261,8 +281,6 @@ ul.foo p {
   .headingImg{
     width: 100%;
     max-width: 100%;
-    height: auto;
-    margin: 0 auto;
   }
 }
 
@@ -366,8 +384,15 @@ ul.foo p {
   height: auto;
   /*margin: 0 2vw;*/
   text-align:center;
-}
+  position: relative;
+  display: inline-block;
 
+  padding-bottom: 2vh;
+
+  border-bottom: solid 3px  #ffffff;
+  /*border-right: solid 3px #F27B00;
+  border-left :solid 3px #00E7D8;*/
+}
 .backImg{
   width: 50%;
   height: auto;
