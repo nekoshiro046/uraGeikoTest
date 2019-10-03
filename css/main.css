@@ -154,12 +154,10 @@ ul.foo p {
 
 .blank {
 	margin-top: 15vh;
-  background-color: #ffffff;
 }
 @media screen and (max-width:480px){
   .blank {
     margin-top: 10vh;
-    background-color: #ffffff;
   }
 }
 .contents{
