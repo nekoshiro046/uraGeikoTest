@@ -152,7 +152,8 @@ function draw() {
             }
         }
 
-        if(explorerNum == 0){
+        // if(explorerNum < 3){
+        if(markers.length < 3){
             // noLoop();
             // print("loopstop");
             tint(255, fadeCount);
