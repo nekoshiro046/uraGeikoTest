@@ -166,9 +166,10 @@ function draw() {
 	        // }
 	        $(".headerLogoImg").css({
             'position':"absolute",
-            'top':0,
+            'top':"50px",
             'left':0,
             'right':0
+            // 'margin-top':"50px"
             });
 	        $(".headerLogoImg").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});
         }
@@ -233,7 +234,7 @@ function draw() {
             'position':"fixed",
             'top':0,
             'left':0,
-            'right':0
+            'right':0,
             });
           $(".title").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});          
          
