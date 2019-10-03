@@ -5,12 +5,18 @@ let clickNum = 12;//発生数
 let clickCount = 0;//発生確認用カウンター
 var apperSpan = 30;//発生スパン闘値
 var uraTriger = false;
-var fadeCount = 0;
+var fadeCount = 32;
 var apperUra = false;
 var apperCircuit = true;
 
 var markers = [];
 var explorer = new Array();
+
+var img = [];
+
+function preload() {
+	img = loadImage("assets/image/ura_logo.png");
+}
 
 // function windowResized(){
 // 	resizeCanvas(windowWidth, windowHeight);
@@ -18,7 +24,7 @@ var explorer = new Array();
 
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
-    canvas.position(0,0);
+    canvas.position(0,50);
     canvas.parent('sketch-holder');
     canvas.style('z-index','-99');
     canvas.style('padding','0');
@@ -37,6 +43,8 @@ function setup() {
 
     initMarkers();
     serchDirection(markers[0]);
+
+    // img.resize(width,img.width * height / width);
 
 }
 
@@ -145,8 +153,15 @@ function draw() {
         }
 
         if(explorerNum == 0){
-            noLoop();
-            print("loopstop");
+            // noLoop();
+            // print("loopstop");
+            tint(255, fadeCount);
+	        image(img,0,0,width,height);
+	        fadeCount += 16;
+	        if(fadeCount > 255){
+	        	noLoop();
+            	print("loopstop");
+	        }
         }
     }
 
@@ -187,7 +202,6 @@ function draw() {
         }
     }
     // else if(clickNum == 0 && apperUra){
-    //     // makeU();
     //     tint(255, fadeCount);
     //     image(img,0,0,width,height);
     //     fadeCount += 16;
