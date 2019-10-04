@@ -30,6 +30,8 @@
   width: 200px;
   height: 50px;
   overflow: hidden;
+
+ /* background-image: url(../assets/image/mv.jpg);*/
 }
 
 .pace .pace-progress {

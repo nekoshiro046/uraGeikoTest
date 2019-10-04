@@ -214,7 +214,7 @@ function drawScene2(){
 		// if(mouseCount > 30)scene = 3;
 	}
 	scene2Count++;
-	if (scene2Count > 60) {
+	if (scene2Count > 120) {
 		scene = 3;
 	}
 }
@@ -229,7 +229,7 @@ function drawScene3(){
 		// if(mouseCount > 30)scene = 3;
 	}
 	scene3Count++;
-	if (scene3Count > 300) {
+	if (scene3Count > 600) {
 		scene = 4;
 	}
 }
