@@ -205,7 +205,7 @@ ul.foo p {
     border-left :solid 3px #ffffff;
   }
 }
-/*
+
 .p-box:before{
   content: "";
   border-right: solid 3px  #00E7D8;
@@ -214,6 +214,7 @@ ul.foo p {
   left: 0;
   width: calc(100% - 4px);
   height: 100%;
+  z-index: -10;
 }
 
 .p-box:after{
@@ -224,7 +225,8 @@ ul.foo p {
   left: 0;
   width: calc(100% + 4px);
   height: 100%;
-}*/
+  z-index: -10;
+}
 
 
 .p-box p.roundText{
