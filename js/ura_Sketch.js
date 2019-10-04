@@ -281,10 +281,14 @@ function Particle(new_location, new_angle) {
         this.angle += (n > 198) ? PI/4 : (n < 1) ? -PI/4 : 0;
 
         strokeWeight(2);
+        var mn = max(width,height) /2;
+        stroke(map(dist(this.location.x, this.location.y, width/2, height/2), 0, mn, 242, 3),
+            map(dist(this.location.x, this.location.y, width/2, height/2), 0, mn, 123, 4),
+            map(dist(this.location.x, this.location.y, width/2, height/2), 0, mn, 0, 18));
         // draw line (ja izdzesh uzrodas tikai galapunkti)
-        stroke(map(dist(this.location.x, this.location.y, width/2, height/2), 0, 500, 242, 3),
-        	map(dist(this.location.x, this.location.y, width/2, height/2), 0, 500, 123, 4),
-        	map(dist(this.location.x, this.location.y, width/2, height/2), 0, 500, 0, 18));
+        // stroke(map(dist(this.location.x, this.location.y, width/2, height/2), 0, 500, 242, 3),
+        // 	map(dist(this.location.x, this.location.y, width/2, height/2), 0, 500, 123, 4),
+        // 	map(dist(this.location.x, this.location.y, width/2, height/2), 0, 500, 0, 18));
         strokeWeight(2);
         line(old_x, old_y, this.location.x, this.location.y);
 
@@ -360,9 +364,14 @@ class Explorer{
     // }
     strokeWeight(3);
 
-    stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 0, 3),
-            map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 231, 4),
-            map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 216, 18));
+    var mn = max(width,height) /2;
+        stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, mn, 0, 3),
+            map(dist(this.position.x, this.position.y, width/2, height/2), 0, mn, 231, 4),
+            map(dist(this.position.x, this.position.y, width/2, height/2), 0, mn, 216, 18));
+
+    // stroke(map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 0, 3),
+    //         map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 231, 4),
+    //         map(dist(this.position.x, this.position.y, width/2, height/2), 0, 500, 216, 18));
     line(old_x, old_y, this.position.x, this.position.y);
 
     // var getCol = get(this.position.x + this.speed * sin(this.angle), this.position.y + this.speed * cos(this.angle));
