@@ -24,6 +24,7 @@ var noiseSize = 50;
 
 var scene1Count = 0;
 var scene2Count = 0;
+var scene3Count = 0;
 
 var loadingCount = 0;
 var loadingMax = 240;
@@ -78,6 +79,7 @@ function setup() {
 	// background(3,4,18);
 	img.resize(width*1.5, height);
 	img2.resize(width*1.5, height);
+	img4.resize(width*1.5, height);
 	// image(img, -maxXChange, -maxYChange,width,img.width * height / width);
 	for (let i = 0; i < 100; i++) {
 		drawStreak();
@@ -90,7 +92,7 @@ function setup() {
 	}
 
 	boxWidth = width * 3 / 5;
-	boxHeight = height / 16;	
+	boxHeight = height / 32;	
 }
 
 function draw() {
@@ -106,10 +108,13 @@ function draw() {
 	}
 	else if(scene == 2){
 		drawScene2();
-		drawImgNoise();
 	}
 	else if(scene == 3){
 		drawScene3();
+		drawImgNoise();
+	}
+	else if(scene == 4){
+		drawScene4();
 	}
 
 	// print(scene);
@@ -129,12 +134,14 @@ function drawLoadScene(){
 	push();
 	rectMode(CORNER);
 	noStroke();
-	fill(0, 231, 216);
-	rect(width / 4, height / 2- boxHeight/2, boxWidth * percentage / loadingMax, boxHeight);
+
+	fill(255);
+	stroke(255);
+	rect(width / 4, height / 2- boxHeight/2, boxWidth, boxHeight,20);
+	// fill(0, 231, 216);
+	fill(242, 123, 0);
+	rect(width / 4, height / 2- boxHeight/2, boxWidth * percentage / loadingMax, boxHeight,20);
 	
-	noFill();
-	stroke(242, 123, 0);
-	rect(width / 4, height / 2- boxHeight/2, boxWidth, boxHeight);
 	if (percentage < loadingMax) {
 		percentage++;
 	}
@@ -194,23 +201,40 @@ function drawImgNoise(){
 // 	}
 // 	noLop();
 // }
-
-
 function drawScene2(){
-	for (let i = 0; i < height / 60; i++) { //dist(pmouseX, pmouseY, mouseX, mouseY) * 0.04; i++) {
-		drawStreak2();
-	}
+	push();
+	noStroke();
+	rectMode(CORNER);
+	fill(3,4,18,scene2Count);
+	noStroke();
+	rect(0,0,windowWidth,windowHeight);
+
 	if(mouseIsPressed){
 		scene2Count++;
 		// if(mouseCount > 30)scene = 3;
 	}
 	scene2Count++;
-	if (scene2Count > 300) {
+	if (scene2Count > 60) {
 		scene = 3;
 	}
 }
 
+
 function drawScene3(){
+	for (let i = 0; i < height / 60; i++) { //dist(pmouseX, pmouseY, mouseX, mouseY) * 0.04; i++) {
+		drawStreak2();
+	}
+	if(mouseIsPressed){
+		scene3Count++;
+		// if(mouseCount > 30)scene = 3;
+	}
+	scene3Count++;
+	if (scene3Count > 300) {
+		scene = 4;
+	}
+}
+
+function drawScene4(){
 	push();
 	noStroke();
 	rectMode(CORNER);
@@ -235,6 +259,13 @@ function drawScene3(){
     });
 	$(".dataCompImg").animate({ opacity: 1 }, { duration: 2000, easing: 'swing'});
 	pop();
+
+	var rn = int(random(0,40));
+	if(rn == 1){
+		drawStreak2();
+	}else if(rn == 2){
+		drawStreak3();
+	}
 }
 
 
@@ -284,6 +315,28 @@ function drawStreak2() {
 	//copy(img, 0, y, img.width, h, xChange - maxXChange, -maxYChange + y + yChange, img.width, h);
 }
 
+function drawStreak3() {
+	let y = floor(random(height));
+	let h = floor(random(20, 30)); //floor(random(1, 100));
+	let xChange = floor(map(noise(y * yNoiseChange, (mouseY * mouseYNoiseChange + frameCount) * timeNoiseChange), 0.06, 0.94, -maxXChange, maxXChange)); //floor(random(-maxXChange, maxXChange));
+	let yChange = floor(xChange * (maxYChange / maxXChange) * random() > 0.1 ? -1 : 1);
+
+	if (random() < dist(pmouseX, pmouseY, mouseX, mouseY) / width * 0.3 + 0.0015) filter(POSTERIZE, floor(random(2, 6)));
+	if (mouseIsPressed && abs(mouseY - y) < 60) {
+		if (!inverted) filter(INVERT);
+		inverted = true;
+	} else {
+		if (inverted) filter(INVERT);
+		inverted = false
+	}
+	
+	//It looks better with the line below IMO but it runs a lot slower (not quite real time)
+	//if(random()<0.07)tint(random(255), random(255), random(255));
+	
+	image(img4, xChange - maxXChange, -maxYChange + y + yChange, img4.width, h, 0, y, img4.width, h);
+	// image(img, xChange - maxXChange, -maxYChange + y + yChange, width, h, 0, y, width, h);
+	//copy(img, 0, y, img.width, h, xChange - maxXChange, -maxYChange + y + yChange, img.width, h);
+}
 //------------------------------------------------------------
 class crashNoise{
 	constructor(x,y,ns){
