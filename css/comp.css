@@ -4,22 +4,16 @@
 
 }
 
-@font-face {
+/*@font-face {
 	font-family: 'Futura1';
 	src:url('../assets/font/Futura-Bold-03.ttf');
 }
 @font-face {
-	font-family: 'Futura2';
+	font-family: 'Futura2'; 
 	src:url('../assets/font/Futura-Medium-01.ttf');
-}
+}*/
 
 body{
-	/*background-color: #030412;*/
-/*  background-image : url(../assets/image/top.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;*/
   padding: 0;
 	margin: 0;
 	width: 100%;
@@ -33,23 +27,27 @@ header{
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 10vh;
+  height: 100%
   z-index:2;
-  /*background-color: #030412;*/
-
 }
-
+.dataImg{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+.dataCompImg{
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  max-height: 100vh;
+  margin: auto;
+  opacity: 0;
+}
 main {
 	font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
-	/*text-orientation: upright;  すべて縦方向に表示 
-	writing-mode: vertical-rl;*/
-	/*background-color: #030412;*/
   margin: 0;
 
 }
-
-/*.pace-running .wrapper {
-    display: none;
-}*/
-
-

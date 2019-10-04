@@ -1,4 +1,4 @@
-var img
+var img,img2,img3,img4;
 var imgs = [];
 var canvas;
 //p5.disableFriendlyErrors = true;
@@ -27,20 +27,26 @@ var boxWidth;
 var boxHeight;
 var percentage = 0;
 
+var fadeCount = 0;
+
 function preload() {
 	img = loadImage("assets/image/mv.jpg");
+	img2 = loadImage("assets/image/ura_logo.jpg");
+
+	img3 = loadImage("assets/sketch02_imgs/ura_data_01.png");
+	img4 = loadImage("assets/sketch02_imgs/ura_data_02.png");
 
 	// img = loadImage("assets/sketch02_imgs/pic02.jpg");
-	imgs[0] = loadImage('assets/sketch02_imgs/pic01.jpg');
-	imgs[1] = loadImage('assets/sketch02_imgs/pic02.jpg');
-	imgs[2] = loadImage('assets/sketch02_imgs/pic03.jpg');
-	imgs[3] = loadImage('assets/sketch02_imgs/pic04.jpg');
+	imgs[0] = loadImage('assets/sketch02_imgs/pic01.png');
+	imgs[1] = loadImage('assets/sketch02_imgs/pic02.png');
+	imgs[2] = loadImage('assets/sketch02_imgs/pic03.png');
+	imgs[3] = loadImage('assets/sketch02_imgs/pic04.png');
 	imgs[4] = loadImage('assets/sketch02_imgs/pic05.jpg');
 	imgs[5] = loadImage('assets/sketch02_imgs/pic06.jpg');
-	imgs[6] = loadImage('assets/sketch02_imgs/pic07.png');
-	imgs[7] = loadImage('assets/sketch02_imgs/pic08.png');
-	imgs[8] = loadImage('assets/sketch02_imgs/pic09.png');
-	imgs[9] = loadImage('assets/sketch02_imgs/pic10.png');
+	imgs[6] = loadImage('assets/sketch02_imgs/pic07.jpg');
+	imgs[7] = loadImage('assets/sketch02_imgs/pic08.jpg');
+	imgs[8] = loadImage('assets/sketch02_imgs/pic09.jpg');
+	imgs[9] = loadImage('assets/sketch02_imgs/pic10.jpg');
 	imgs[10] = loadImage('assets/sketch02_imgs/pic11.png');
 	imgs[11] = loadImage('assets/sketch02_imgs/pic12.jpg');
 	imgs[12] = loadImage('assets/sketch02_imgs/pic13.jpg');
@@ -50,8 +56,8 @@ function preload() {
 
 
 function setup() {
-	canvas = createCanvas(windowWidth, windowHeight);
-	// canvas = createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
+	// canvas = createCanvas(windowWidth, windowHeight);
+	canvas = createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
     canvas.position(0,0);
     canvas.parent('sketch-holder');
     canvas.style('z-index','-99');
@@ -59,11 +65,14 @@ function setup() {
     canvas.style('margin','0');
     canvas.style('width','100%');
     canvas.style('height','auto');
+    canvas.style('position','fixed');
+    
     rectMode(CENTER);
     // frameRate(24);
 	// createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
 	// background(3,4,18);
-	// img.resize(width, height);
+	img.resize(width*1.5, height);
+	img2.resize(width*1.5, height);
 	// image(img, -maxXChange, -maxYChange,width,img.width * height / width);
 	for (let i = 0; i < 100; i++) {
 		drawStreak();
@@ -76,7 +85,7 @@ function setup() {
 	}
 
 	boxWidth = width * 3 / 5;
-	boxHeight = height / 4;	
+	boxHeight = height / 8;	
 }
 
 function draw() {
@@ -86,11 +95,13 @@ function draw() {
 			drawLoadScene();
 			loadingCount++;
 		}else{
-			drawImgNoise();
+			scene = 2;
+			// drawImgNoise();
 		}
 	}
 	else if(scene == 2){
 		drawScene2();
+		drawImgNoise();
 	}
 	else if(scene == 3){
 		drawScene3();
@@ -132,28 +143,35 @@ function drawImgNoise(){
 	// 	scene1Count++;
 	// }else{
 	// }
-  	switch(rn){
+  	switch(rn){	
 	    case 39:
+	      	push();
+		 	colorMode(HSB);
+		  	noStroke();
+		  	background(0);
+		  	let w = width;
+		  	let h = height;
+		  	for (x = 5 ; x < w ; x += 10) {
+		    	fill(360, 0, 360);
+		    	rect(x, h, 10, random(0,2000));
+		  	}
+		  	for (x = 5 ; x < w ; x += 10) {
+		    	fill(360, 0, 360);
+		    	rect(x, 0, 10, random(0,2000));
+		  	}
+		  	pop();
+	      	break; 
+	    case 38:
 			var rn = int(random(14));
   			image(imgs[rn],0,0,width,height);
 	      	break;
-	    case 38:
-	      push();
-		  colorMode(HSB);
-		  noStroke();
-		  background(0);
-		  let w = width;
-		  let h = height;
-		  for (x = 5 ; x < w ; x += 10) {
-		    fill(360, 0, 360);
-		    rect(x, h, 10, random(0,2000));
-		  }
-		  for (x = 5 ; x < w ; x += 10) {
-		    fill(360, 0, 360);
-		    rect(x, 0, 10, random(0,2000));
-		  }
-		  pop();
-	      break;   
+	    case 37:
+	    case 36:
+	    case 35:
+	    case 34:
+			var rn = int(random(0,4));
+  			image(imgs[rn],0,0,width,height);
+	      	break;  	    
 	    default:
 	      break;
   	}
@@ -162,7 +180,7 @@ function drawImgNoise(){
 
 // function drawScene2_0(){
 // 	for(var i = 0; i < crashes.length; i++){
-// 		crashes[i].update();
+// 		crashes[i].updata();
 // 		if (crashes[i].end) crashes.splice(i, 1);
 // 		// print("awake");
 // 	}
@@ -177,8 +195,12 @@ function drawScene2(){
 	for (let i = 0; i < height / 60; i++) { //dist(pmouseX, pmouseY, mouseX, mouseY) * 0.04; i++) {
 		drawStreak2();
 	}
+	if(mouseIsPressed){
+		scene2Count++;
+		// if(mouseCount > 30)scene = 3;
+	}
 	scene2Count++;
-	if (scene2Count > 255) {
+	if (scene2Count > 300) {
 		scene = 3;
 	}
 }
@@ -190,6 +212,23 @@ function drawScene3(){
 	fill(3,4,18,scene2Count);
 	noStroke();
 	rect(0,0,windowWidth,windowHeight);
+
+	// tint(255, fadeCount);
+	// image(img4,0,0,width,height);
+	// fadeCount += 16;
+	// if(fadeCount > 255){
+	//     noLoop();
+ //        print("loopstop");
+	// }
+	$(".dataCompImg").css({
+        'position':"absolute",
+        'top':0,
+        'bottom':0,
+        'left':0,
+        'right':0
+        // 'margin-top':"50px"
+    });
+	$(".dataCompImg").animate({ opacity: 1 }, { duration: 2000, easing: 'swing'});
 	pop();
 }
 
@@ -235,7 +274,7 @@ function drawStreak2() {
 	//It looks better with the line below IMO but it runs a lot slower (not quite real time)
 	//if(random()<0.07)tint(random(255), random(255), random(255));
 	
-	image(imgs[14], xChange - maxXChange, -maxYChange + y + yChange, imgs[14].width, h, 0, y, imgs[14].width, h);
+	image(img2, xChange - maxXChange, -maxYChange + y + yChange, img2.width, h, 0, y, img2.width, h);
 	// image(img, xChange - maxXChange, -maxYChange + y + yChange, width, h, 0, y, width, h);
 	//copy(img, 0, y, img.width, h, xChange - maxXChange, -maxYChange + y + yChange, img.width, h);
 }
@@ -248,7 +287,7 @@ class crashNoise{
 		this.noiseSize = ns;
 		this.end = false;
 	}
-	update(){
+	updata(){
 		push();
 		noStroke();
 		fill(3,4,18);

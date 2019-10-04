@@ -123,7 +123,7 @@ function draw() {
     if(apperUra){
         var explorerNum = 0;
         for (var i = 0; i < explorer.length; i++) {
-            explorer[i].update();
+            explorer[i].updata();
             explorerNum++;
             if (explorer[i].blocked) explorer.splice(i, 1);
         }
@@ -337,7 +337,7 @@ class Explorer{
     this.blocked = false;
   }
 
-  update(){
+  updata(){
     push();
 
     var old_x = this.position.x;
