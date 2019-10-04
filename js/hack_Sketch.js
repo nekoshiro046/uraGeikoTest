@@ -90,7 +90,7 @@ function setup() {
 	}
 
 	boxWidth = width * 3 / 5;
-	boxHeight = height / 8;	
+	boxHeight = height / 16;	
 }
 
 function draw() {
@@ -127,14 +127,14 @@ function drawScene1(){
 
 function drawLoadScene(){
 	push();
-	rectMode(CENTER);
+	rectMode(CORNER);
 	noStroke();
 	fill(0, 231, 216);
-	rect(width / 2, height / 2, boxWidth * percentage / loadingMax, boxHeight);
+	rect(width / 4, height / 2- boxHeight/2, boxWidth * percentage / loadingMax, boxHeight);
 	
 	noFill();
 	stroke(242, 123, 0);
-	rect(width / 2, height / 2, boxWidth, boxHeight);
+	rect(width / 4, height / 2- boxHeight/2, boxWidth, boxHeight);
 	if (percentage < loadingMax) {
 		percentage++;
 	}
