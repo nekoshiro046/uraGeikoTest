@@ -62,8 +62,8 @@ function preload() {
 
 
 function setup() {
-	// canvas = createCanvas(windowWidth, windowHeight);
-	canvas = createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
+	canvas = createCanvas(windowWidth, windowHeight);
+	// canvas = createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
     canvas.position(0,0);
     canvas.parent('sketch-holder');
     canvas.style('z-index','-99');
@@ -77,9 +77,17 @@ function setup() {
     // frameRate(24);
 	// createCanvas(constrain(img.width - maxXChange * 2, 100, windowWidth), constrain(img.height - maxYChange * 2, 100, windowHeight));
 	// background(3,4,18);
-	img.resize(width*1.5, height);
-	img2.resize(width*1.5, height);
-	img4.resize(width*1.5, height);
+	if(windowHeight > windowWidth){
+		img.resize(width*1.5, height);
+		img2.resize(width*1.5, height);
+		img4.resize(width*1.5, height);
+	}else{
+		img.resize(width*1.25, height);
+		img2.resize(width*1.25, height);
+		img4.resize(width*1.25, height);
+		print("awake");
+	}
+	
 	// image(img, -maxXChange, -maxYChange,width,img.width * height / width);
 	for (let i = 0; i < 100; i++) {
 		drawStreak();
