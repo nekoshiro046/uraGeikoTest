@@ -236,7 +236,7 @@ ul.foo p {
   height: 10vw;
   /*top: 0;*/
   bottom: -5%;
-  left: -5vw;
+  left: -3vw;
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -255,7 +255,7 @@ ul.foo p {
     height: 10vw;
     /*top: 0;*/
     bottom: -5%;
-    left: -7vw;
+    left: -5vw;
     position: absolute;
     display: flex;
     justify-content: space-between;
