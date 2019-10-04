@@ -231,8 +231,8 @@ ul.foo p {
 
 .p-box p.roundText{
   font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
-  font-size: 20px;
-  width: 25vh;
+  font-size: 10px;
+  width: 50%;
   height: 10vw;
   /*top: 0;*/
   bottom: -5%;
@@ -250,8 +250,8 @@ ul.foo p {
 @media screen and (max-width:480px){
   .p-box p.roundText{
     font-family: 'Futura1','Futura2','arial black','arial','sans-serif','Impact';
-    font-size: 20px;
-    width: 25vh;
+    font-size: 8px;
+    width: 50%;
     height: 10vw;
     /*top: 0;*/
     bottom: -5%;
