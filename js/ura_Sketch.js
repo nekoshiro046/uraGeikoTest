@@ -138,12 +138,10 @@ function draw() {
                     //     markers[j].position.x,markers[j].position.y) < 5){
                     // push();
                     // noFill();
-                    // stroke(map(dist(explorer[i].position.x, explorer[i].position.y, width/2, height/2), 0, 500, 0, 3),
-                    //         map(dist(explorer[i].position.x, explorer[i].position.y, width/2, height/2), 0, 500, 231, 4),
-                    //         map(dist(explorer[i].position.x, explorer[i].position.y, width/2, height/2), 0, 500, 216, 18));
-                    // ellipse(explorer[i].position.x + explorer[i].speed * sin(explorer[i].angle),
-                    // explorer[i].position.y  + explorer[i].speed * cos(explorer[i].angle),7,7);
-
+                    stroke(map(dist(explorer[i].position.x, explorer[i].position.y, width/2, height/2), 0, 500, 0, 3),
+                            map(dist(explorer[i].position.x, explorer[i].position.y, width/2, height/2), 0, 500, 231, 4),
+                            map(dist(explorer[i].position.x, explorer[i].position.y, width/2, height/2), 0, 500, 216, 18));
+                    ellipse(explorer[i].position.x, explorer[i].position.y, 7, 7);
                     explorer.splice(i, 1);
                     serchDirection(markers[j]);
                     markers.splice(j, 1);
@@ -376,12 +374,12 @@ class Explorer{
 
     pop();
 
-    if (this.life > 0) {
-        this.life--;
-    } else {
-        this.blocked = true;
-        return;
-    }
+    // if (this.life > 0) {
+    //     this.life--;
+    // } else {
+    //     this.blocked = true;
+    //     return;
+    // }
 
   }
 }
