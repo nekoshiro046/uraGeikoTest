@@ -208,7 +208,7 @@ ul.foo p {
 
 .p-box:before{
   content: "";
-  border-right: solid 3px  #00E7D8;
+  border-right: solid 3px  #F27B00;
   position: absolute;
   top: 0;
   left: 0;
