@@ -335,8 +335,8 @@ ul.foo p {
   width:calc(100% / 3);
   height:calc(90% / 7);
   margin-right: 0;
-  margin-top:  4vh;
-  margin-bottom: 2vh;
+  margin-top:  6vh;
+  margin-bottom: 0;
 }
 
 .member02{
@@ -344,7 +344,7 @@ ul.foo p {
   height:calc(90% / 7);
   margin-right: 0;
   margin-top:  2vh;
-  margin-bottom: 2vh;
+  margin-bottom: 0;
 }
 .memberImg {
   width:80%;
