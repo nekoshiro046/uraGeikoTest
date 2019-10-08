@@ -43,17 +43,17 @@ function preload() {
 	img4 = loadImage("assets/sketch02_imgs/ura_data_02.png");
 
 	// img = loadImage("assets/sketch02_imgs/pic02.jpg");
-	imgs[0] = loadImage('assets/sketch02_imgs/pic01.jpg');
-	imgs[1] = loadImage('assets/sketch02_imgs/pic02.jpg');
-	imgs[2] = loadImage('assets/sketch02_imgs/pic03.jpg');
-	imgs[3] = loadImage('assets/sketch02_imgs/pic04.jpg');
+	imgs[0] = loadImage('assets/sketch02_imgs/pic01.jp2');
+	imgs[1] = loadImage('assets/sketch02_imgs/pic02.jp2');
+	imgs[2] = loadImage('assets/sketch02_imgs/pic03.jp2');
+	imgs[3] = loadImage('assets/sketch02_imgs/pic04.jp2');
 	imgs[4] = loadImage('assets/sketch02_imgs/pic05.jpg');
 	imgs[5] = loadImage('assets/sketch02_imgs/pic06.jpg');
 	imgs[6] = loadImage('assets/sketch02_imgs/pic07.jpg');
 	imgs[7] = loadImage('assets/sketch02_imgs/pic08.jpg');
 	imgs[8] = loadImage('assets/sketch02_imgs/pic09.jpg');
 	imgs[9] = loadImage('assets/sketch02_imgs/pic10.jpg');
-	imgs[10] = loadImage('assets/sketch02_imgs/pic11.jpg');
+	imgs[10] = loadImage('assets/sketch02_imgs/pic11.jp2');
 	imgs[11] = loadImage('assets/sketch02_imgs/pic12.jpg');
 	imgs[12] = loadImage('assets/sketch02_imgs/pic13.jpg');
 	imgs[13] = loadImage('assets/sketch02_imgs/pic14.jpg');
