@@ -3,7 +3,7 @@ var p = new Array();
 var canvas;
 let clickNum = 12;//発生数
 let clickCount = 0;//発生確認用カウンター
-var apperSpan = 30;//発生スパン闘値
+var apperSpan = 18;//発生スパン闘値
 var uraTriger = false;
 var fadeCount = 32;
 var apperUra = false;
