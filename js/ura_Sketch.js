@@ -15,7 +15,7 @@ var explorer = new Array();
 var img = [];
 
 function preload() {
-	img = loadImage("assets/image/ura_logo.png");
+	img = loadImage("assets/image/ura_logo.jp2");
 }
 
 // function windowResized(){
