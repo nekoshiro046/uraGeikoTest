@@ -46,20 +46,34 @@ function preload() {
 	img4 = loadImage("assets/image/ura_logo.jpg");
 
 	// img = loadImage("assets/sketch02_imgs/pic02.jpg");
-	imgs[0] = loadImage('assets/sketch02_imgs/pic01.jp2');
-	imgs[1] = loadImage('assets/sketch02_imgs/pic02.jp2');
-	imgs[2] = loadImage('assets/sketch02_imgs/pic03.jp2');
-	imgs[3] = loadImage('assets/sketch02_imgs/pic04.jp2');
-	imgs[4] = loadImage('assets/sketch02_imgs/pic05.jp2');
-	imgs[5] = loadImage('assets/sketch02_imgs/pic06.jp2');
-	imgs[6] = loadImage('assets/sketch02_imgs/pic07.jp2');
-	imgs[7] = loadImage('assets/sketch02_imgs/pic08.jp2');
-	imgs[8] = loadImage('assets/sketch02_imgs/pic09.jp2');
-	imgs[9] = loadImage('assets/sketch02_imgs/pic10.jp2');
-	imgs[10] = loadImage('assets/sketch02_imgs/pic11.jp2');
-	imgs[11] = loadImage('assets/sketch02_imgs/pic12.jp2');
-	imgs[12] = loadImage('assets/sketch02_imgs/pic13.jp2');
-	imgs[13] = loadImage('assets/sketch02_imgs/pic14.jp2');
+	// imgs[0] = loadImage('assets/sketch02_imgs/pic01.jp2');
+	// imgs[1] = loadImage('assets/sketch02_imgs/pic02.jp2');
+	// imgs[2] = loadImage('assets/sketch02_imgs/pic03.jp2');
+	// imgs[3] = loadImage('assets/sketch02_imgs/pic04.jp2');
+	// imgs[4] = loadImage('assets/sketch02_imgs/pic05.jp2');
+	// imgs[5] = loadImage('assets/sketch02_imgs/pic06.jp2');
+	// imgs[6] = loadImage('assets/sketch02_imgs/pic07.jp2');
+	// imgs[7] = loadImage('assets/sketch02_imgs/pic08.jp2');
+	// imgs[8] = loadImage('assets/sketch02_imgs/pic09.jp2');
+	// imgs[9] = loadImage('assets/sketch02_imgs/pic10.jp2');
+	// imgs[10] = loadImage('assets/sketch02_imgs/pic11.jp2');
+	// imgs[11] = loadImage('assets/sketch02_imgs/pic12.jp2');
+	// imgs[12] = loadImage('assets/sketch02_imgs/pic13.jp2');
+	// imgs[13] = loadImage('assets/sketch02_imgs/pic14.jp2');
+	imgs[0] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic01.jp2');
+	imgs[1] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic02.jp2');
+	imgs[2] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic03.jp2');
+	imgs[3] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic04.jp2');
+	imgs[4] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic05.jp2');
+	imgs[5] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic06.jp2');
+	imgs[6] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic07.jp2');
+	imgs[7] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic08.jp2');
+	imgs[8] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic09.jp2');
+	imgs[9] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic10.jp2');
+	imgs[10] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic11.jp2');
+	imgs[11] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic12.jp2');
+	imgs[12] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic13.jp2');
+	imgs[13] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic14.jp2');
 }
 
 
