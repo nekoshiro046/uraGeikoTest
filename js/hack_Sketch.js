@@ -13,17 +13,19 @@ var scene = 1;
 var mouseCount = 0;
 var crashes = [];
 var noiseSize = 50;
-var scene1Count = 0,scene2Count = 0,scene3Count = 0;
+var scene1Count = 0,scene2Count = 0,scene3Count = 0,scene4Count = 0;
 var loadingCount = 0;
 var loadingMax = 240;
 var boxWidth,boxHeight;
 var percentage = 0;
 var fadeCount = 0;
+var afterImg = false;
 function preload() {
-	img = loadImage("assets/image/mv.jp2");
-	img2 = loadImage("assets/image/ura_logo.jpg");
-	img3 = loadImage("assets/image/mv.jp2");
-	img4 = loadImage("assets/image/ura_logo.jpg");
+	img = loadImage("https://nekoshiro046.github.io/uraImg/image/mv.jp2");
+	img2 = loadImage("https://nekoshiro046.github.io/uraImg/sketch02_imgs/jacked.jp2");
+	img3 = loadImage("https://nekoshiro046.github.io/uraImg/image/ura_logo.jpg");
+	img4 = loadImage("https://nekoshiro046.github.io/uraImg/sketch02_imgs/complete.jp2");
+
 	imgs[0] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic01.jp2');
 	imgs[1] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic02.jp2');
 	imgs[2] = loadImage('https://nekoshiro046.github.io/uraImg/sketch02_imgs/pic03.jp2');
@@ -53,12 +55,13 @@ function setup() {
 	if(windowHeight > windowWidth){
 		img.resize(width*1.5, height);
 		img2.resize(width*1.5, height);
+		img3.resize(width*1.5, height);
 		img4.resize(width*1.5, height);
 	}else{
 		img.resize(width*1.25, height);
 		img2.resize(width*1.25, height);
+		img3.resize(width*1.25, height);
 		img4.resize(width*1.25, height);
-		print("awake");
 	}
 	for (let i = 0; i < 100; i++) {drawStreak(img);}
 	var nw = int(width / noiseSize);
@@ -137,29 +140,7 @@ function drawScene2(){
 	push();
 	noStroke();
 	rectMode(CORNER);
-	fill(3,4,18,scene2Count);
-	noStroke();
-	rect(0,0,windowWidth,windowHeight);
-	if(mouseIsPressed)scene2Count++;
-	scene2Count++;
-	if (scene2Count > 120)scene = 3;
-}
-
-
-function drawScene3(){
-	for (let i = 0; i < height / 60; i++) { //dist(pmouseX, pmouseY, mouseX, mouseY) * 0.04; i++) {
-		drawStreak(img2);
-	}
-	if(mouseIsPressed)scene3Count++;
-	scene3Count++;
-	if (scene3Count > 600)scene = 4;
-}
-
-function drawScene4(){
-	push();
-	noStroke();
-	rectMode(CORNER);
-	fill(3,4,18,scene2Count);
+	fill(0,scene2Count);
 	noStroke();
 	rect(0,0,windowWidth,windowHeight);
 	$(".dataCompImg").css({
@@ -169,15 +150,65 @@ function drawScene4(){
         'left':0,
         'right':0
     });
-	$(".dataCompImg").animate({ opacity: 1 }, { duration: 2000, easing: 'swing'});
-	pop();
+	$(".dataCompImg").animate({ opacity: 1 }, { duration: 1500, easing: 'swing'});
+	if(mouseIsPressed)scene2Count++;
+	scene2Count++;
+	if (scene2Count > 150){
+		$(".dataCompImg").css({
+        	'opacity':"0",
+        	'z-index':'-999'
+    	});
+  	// $("#dataCompImg").animate({ opacity: 0 }, { duration: 10, easing: 'swing'});
+    	scene = 3;
+	}
+}
 
-	var rn = int(random(0,40));
+
+function drawScene3(){
+	for (let i = 0; i < height / 60; i++) { //dist(pmouseX, pmouseY, mouseX, mouseY) * 0.04; i++) {
+		drawStreak(img3);
+	}
+	if(mouseIsPressed)scene3Count++;
+	scene3Count++;
+	if (scene3Count > 300)scene = 4;
+}
+
+function drawScene4(){
+	push();
+	noStroke();
+	rectMode(CORNER);
+	fill(0,scene4Count);
+	noStroke();
+	rect(0,0,windowWidth,windowHeight);
+	var rn = int(random(0,20));
 	if(rn == 1){
 		drawStreak(img2);
 	}else if(rn == 2){
+		drawStreak(img3);
+	}else if(rn >5 || rn < 15){
 		drawStreak(img4);
 	}
+	if(!afterImg){
+		var htmlImg = document.getElementById('imgBox')
+		htmlImg.innerHTML = '<img class = "dataCompImg" src="https://nekoshiro046.github.io/uraImg/sketch02_imgs/complete.jp2">';
+		$(".dataCompImg").css({
+		'width': '100%',
+		'max-width': '600px',
+		'height': 'auto',
+		'max-height': '100vh',
+		'margin': 'auto',
+		'position':"absolute",
+        'top':0,
+        'bottom':0,
+        'left':0,
+        'right':0,
+		'z-index':'0'
+    	});
+		$(".dataCompImg").animate({ opacity: 1 }, { duration: 2000, easing: 'swing'});
+		afterImg = true;
+	}
+	pop();
+	if(scene4Count < 255)scene4Count++;
 }
 function drawStreak(img) {
 	let y = floor(random(height));
