@@ -117,7 +117,7 @@ function draw() {
           // 一旦hide()で隠してフェードインさせる
           $(".title").css({
             'position':"fixed",
-            'background-color':"rgba(3,4,18,0.8)",
+            'background-color':"rgba(0,0,0,0.8)",
             'z-index':'2'
             });
           $(".titleImg").css({
