@@ -205,9 +205,18 @@ class Explorer{
 }
 
 //---------------------
+function mov0Btn(){
+    var mov = document.getElementById('mov');
+    // mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/353201140" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    mov.innerHTML = '<iframe class="mov-container" src="https://www.youtube.com/embed/lUwpAVnDQRM" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    $(".btn-sf-like0").css({'background-color':"#ff7b00"});
+    $(".btn-sf-like1").css({'background-color':"#565656"});
+    $(".btn-sf-like3").css({'background-color':"#565656"});
+    $(".btn-sf-like2").css({'background-color':"#565656"});
+}
 function mov1Btn(){
     var mov = document.getElementById('mov');
-    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/355798761" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    mov.innerHTML = '<p style ="text-align:center;height:10vh;">coming soon</p>';
     $(".btn-sf-like1").css({'background-color':"#ff7b00"});
     $(".btn-sf-like2").css({'background-color':"#565656"});
     $(".btn-sf-like3").css({'background-color':"#565656"});
@@ -215,7 +224,7 @@ function mov1Btn(){
 }
 function mov2Btn(){
     var mov = document.getElementById('mov');
-    mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/353201140" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    mov.innerHTML = '<p style ="text-align:center;height:10vh;">coming soon</p>';
     $(".btn-sf-like2").css({'background-color':"#ff7b00"});
     $(".btn-sf-like1").css({'background-color':"#565656"});
     $(".btn-sf-like3").css({'background-color':"#565656"});
@@ -229,14 +238,5 @@ function mov3Btn(){
     $(".btn-sf-like2").css({'background-color':"#565656"});
     $(".btn-sf-like0").css({'background-color':"#565656"});
     $(".btn-sf-like1").css({'background-color':"#565656"});
-}
-function mov0Btn(){
-    var mov = document.getElementById('mov');
-    // mov.innerHTML = '<iframe class="mov-container" src="https://player.vimeo.com/video/353201140" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
-    mov.innerHTML = '<p style ="text-align:center;height:10vh;">coming soon</p>';
-    $(".btn-sf-like0").css({'background-color':"#ff7b00"});
-    $(".btn-sf-like1").css({'background-color':"#565656"});
-    $(".btn-sf-like3").css({'background-color':"#565656"});
-    $(".btn-sf-like2").css({'background-color':"#565656"});
 }
 $(function() {$('html,body').animate({ scrollTop: 0 }, '1');});

@@ -105,10 +105,10 @@ ul.foo p {
     margin: 0 2vw;
     
 }
-.btn-sf-like1{
+.btn-sf-like0{
   background-color:#ff7b00;
 }
-.btn-sf-like2, .btn-sf-like3, .btn-sf-like0{
+.btn-sf-like1, .btn-sf-like2, .btn-sf-like3{
   background-color:#565656;
 }
 
@@ -359,7 +359,7 @@ ul.foo p {
 }
 
 .mov-container{
-  width: 100%;
+  width: 90%;
   height: auto;
   margin-top: 0;
 }
