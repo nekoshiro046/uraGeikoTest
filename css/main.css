@@ -99,6 +99,8 @@ ul.foo li {
 }
 ul.foo p {
     text-align:center;
+    width:100%;
+    height: auto;
     /*background-color:red;*/
     border-left:1px solid white;
     border-right:1px solid white;
@@ -107,10 +109,13 @@ ul.foo p {
 }
 .btn-sf-like0{
   background-color:#ff7b00;
+  /*word-wrap: break-word;*/
 }
 .btn-sf-like1, .btn-sf-like2, .btn-sf-like3{
   background-color:#565656;
+  /*word-wrap: break-word;*/
 }
+
 
 .title {
   position: fixed;
