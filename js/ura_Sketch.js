@@ -9,8 +9,8 @@ var apperUra = false;
 var apperCircuit = true;
 var markers = [];
 var explorer = new Array();
-var img = [];
-function preload() {img = loadImage("assets/image/ura_logo.jp2");}
+// var img = [];
+// function preload() {img = loadImage("https://nekoshiro046.github.io/uraImg/image/ura_logo.png");}
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0,50);
